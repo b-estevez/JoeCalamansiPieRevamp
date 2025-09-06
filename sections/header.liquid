@@ -1,41 +1,66 @@
-<header class="bg-white flex justify-between items-center lg:items-center gap-4 lg:justify-around py-4 ">
-  <div class="flex gap-3 items-center ml-2 lg:ml-0">
-    <a href="#" class="ml-5 lg:hidden">
-      {% render 'icon-hamburger-menu' %}
-    </a>
-    <a href="/" >
-      <img src="{{section.settings.header_logo | image_url }}" height="52" width="52" alt="JCC logo" class="">
-    </a>
-  </div>
-  
-  
-    <nav class="nav-links bg-white absolute left-[-100%] lg:static min-h-max top-[9.2%] h-full lg:h-auto w-full md:w-[50%] lg:w-auto lg:w-auto">
-      <ul class="flex flex-col lg:flex-row lg:gap-[1.5vw]">
-            {% for link in linklists.main-menu.links %}
-              {% if link.active %}
-                <li class="bg-red-100 text-jcc-red px-3 lg:rounded-sm text-black/70">
-                  <a class="block w-full h-full py-[2vh] lg:py-2">{{ link.title }}</a>
-                </li>
-                {% else %}
-                <li class="hover:bg-red-100 hover:text-jcc-red px-3 lg:rounded-sm text-black/70">
-                  <a class="block w-full h-full py-[2vh] lg:py-2" href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          
+<header class="drawer bg-white">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex justify-between items-center lg:items-center gap-4 lg:justify-around py-4">
+    <div class="flex gap-3 items-center ml-2 lg:ml-0">
+      <a href="#" class="ml-5 lg:hidden">
+        <label for="my-drawer" class="drawer-button">
+          {% render 'icon-hamburger-menu' %}
+        </label>
+      </a>
+      <a href="/" class="absolute lg:static left-[50%] translate-x-[-50%] lg:translate-none">
+        <img src="{{section.settings.header_logo | image_url }}" height="150" width="150" alt="JCC logo" class="">
+      </a>
+    </div>
+
+    <nav class="nav-links bg-white absolute left-[-100%] lg:static min-h-max top-[0] h-full lg:h-auto w-[50%] lg:w-auto lg:w-auto pt-[8.5vh]">
+      <ul class="flex flex-col lg:flex-row gap-8 lg:gap-[1.5vw]">
+        {% for link in linklists.main-menu.links %}
+          {% if link.active %}
+            <li class="mx-8 lg:rounded-sm text-black/65">
+              <a class="bg-black/10 px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+            </li>
+            {% else %}
+            <li class="mx-8 lg:rounded-sm text-black/65">
+              <a class="hover:bg-black/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      
       </ul>
     </nav>
- 
+
     <ul id="shopify-icons" class="flex mr-5 lg:mr-0 lg:flex-row gap-1 lg:gap-5 text-black/70">
-      <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-search' %}</li></a>
+      {% comment %} <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-search' %}</li></a> {% endcomment %}
       <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-user' %}</li></a>
       <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-shopping-bag' %}</li></a>
     </ul>
+  </div>
+
+  <div class="drawer-side">
+    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="flex flex-col bg-white min-h-full gap-8 w-[50%] pt-[8.5vh]">
+      <label for="my-drawer" aria-label="close sidebar" class="">
+        {% render 'icon-close-menu' %}
+      </label>
+          {% for link in linklists.main-menu.links %}
+            {% if link.active %}
+              <li class="mx-8 lg:rounded-sm text-black/65">
+                <a class="tracking-wide bg-black/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+              </li>
+              {% else %}
+              <li class="mx-8 lg:rounded-sm text-black/65">
+                <a class="tracking-wide hover:bg-black/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        
+    </ul>
+  </div>
   
-
-
   
-
+  
+ 
+  
 </header>
 
 {% schema %}

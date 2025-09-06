@@ -1,0 +1,6 @@
+function onToggleMenu(e,clickAttributeName){
+    let element = document.querySelector(clickAttributeName);
+    let navLinks = document.querySelector(`.nav-links`);
+     element.getAttribute('d') === 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' ? element.setAttribute('d','M6 18 18 6M6 6l12 12') : element.setAttribute('d','M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5') ;
+    navLinks.classList.toggle('left-[-100%]');
+}

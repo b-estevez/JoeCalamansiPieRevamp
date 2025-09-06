@@ -13,10 +13,13 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu": "",
+        "header_logo": "shopify://shop_images/Joe_Caricature_1.png"
+      }
     }
   },
   "order": [
     "header"
-  ],
+  ]
 }

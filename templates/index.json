@@ -9,12 +9,28 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "hero": {
+      "type": "index-hero",
       "settings": {}
-    }
+    },
+    "product_feature": {
+      "type": "index-product",
+      "settings": {}
+    },
+    "testimonial": {
+      "type": "index-testimonial",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "index-newsletter",
+      "settings": {}
+    },
+
   },
   "order": [
-    "main"
+    "hero",
+    "product_feature",
+    "testimonial",
+    "newsletter"
   ]
 }

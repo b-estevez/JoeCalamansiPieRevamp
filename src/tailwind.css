@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
 
+@layer component{
+    html {
+    scrollbar-gutter: auto !important;
+    }
+
+    html:has(body.content-overflow-y) {
+    scrollbar-gutter: stable !important;
+    }
+}
 
 @theme {
     --font-inter: "Inter", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
      --color-jcc-light-red: rgba(222, 73, 47, 0.2);
     --color-jcc-red: #DE492F;
     --color-nav-black: #374151;

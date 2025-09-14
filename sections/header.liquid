@@ -1,4 +1,4 @@
-<header class="drawer bg-white pt-7 pb-2">
+<header class="drawer bg-white pt-7 pb-2 lg:min-h-40 fixed top-0 z-1">
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex justify-evenly items-center lg:items-center gap-1 lg:justify-around py-2">
     <div class="hidden lg:flex lg:gap-2 text-black">
@@ -13,8 +13,8 @@
       </a>
     </div>
 
-    <nav class="nav-links bg-white min-h-max top-[0] h-full lg:h-auto lg:pt-[8vh]">
-      <a href="/" class="lg:absolute lg:top-[1vh] lg:left-[50%] lg:translate-x-[-50%] mt-1">
+    <nav class="nav-links bg-white min-h-max top-[0] h-full lg:h-auto lg:mt-auto">
+      <a href="/" class="lg:absolute lg:top-2 lg:left-[50%] lg:translate-x-[-50%]">
         <img src="{{section.settings.header_logo | image_url }}" height="auto" width="150" alt="JCC logo" class="lg:w-50.5">
       </a>
       <ul class="hidden lg:flex flex-col lg:flex-row gap-6 text-[14px] ml-[-60px]">
@@ -35,8 +35,8 @@
 
     <ul id="shopify-icons" class="flex mr-5 lg:mr-0 lg:flex-row gap-1 lg:gap-5 text-black/70">
       {% comment %} <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-search' %}</li></a> {% endcomment %}
-      <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-user' %}</li></a>
-      <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-shopping-bag' %}</li></a>
+      <a href="#"><li class="p-2 rounded-sm hover:bg-black/10">{% render 'icon-user' %}</li></a>
+      <a href="#"><li class="p-2 rounded-sm hover:bg-black/10">{% render 'icon-shopping-bag' %}</li></a>
     </ul>
   </div>
 

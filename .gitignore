@@ -11,7 +11,10 @@ node_modules/
 
 # Shopify CLI files
 .shopify/
+assets/tailwind.css
 
 ## Release files
 release
 *.zip
+assets/tailwind.css
+assets/tailwind.css

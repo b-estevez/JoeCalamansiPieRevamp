@@ -5,13 +5,14 @@
     {% # Load and preload the critical CSS %}
     {% comment %} {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }} {% endcomment %}
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
   </head>
 
-  <body class="font-inter h-screen bg-indigo-100 ">
+  <body class="font-montserrat h-screen overflow-x-hidden">
     {% sections 'header-group' %}
 
     {{ content_for_layout }}

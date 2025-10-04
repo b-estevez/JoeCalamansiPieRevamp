@@ -1,1 +1,71 @@
-<h1>PRODUCT SECTION</h1>
+<div class="product-section bg-white gap-15 md:gap-10 py-20 px-5 md:px-15 lg:px-20 font-poppins">
+    <div class="flex flex-col items-center lg:flex-row lg:items-start lg:justify-center gap-15">
+        <div class="flex flex-col gap-15">
+            <div class="header text-black text-center lg:text-left ml-auto">
+                <h1 class="text-2xl lg:text-3xl font-bold">Our Calamansi Tart</h1>
+                <p class="text-lg font-extralight">A citrus treat in every bite with delicate sweetness.</p>
+            </div>  
+            <div class="product-slider w-110 relative isolate">
+                <div style="background-image:url('{{ section.settings.product_image_slider_1 | image_url }}');" class="product-first-image rounded-xl h-90 bg-size-[100%_auto] bg-no-repeat bg-position-[-80%] w-full">
+                
+                </div>
+
+                <div class="top-[68.5%] -right-2 absolute border-12 border-white bg-white rounded-xl w-60 flex gap-4">
+                    <div style="background-image:url('{{ section.settings.product_image_slider_2 | image_url }}');" class="product-second-image rounded-xl h-25 w-full bg-size-[100%_auto] bg-no-repeat bg-position-[-80%] cursor-pointer">
+                        
+                    </div>
+                    <div style="background-image:url('{{ section.settings.product_image_slider_3 | image_url }}');" class="product-third-image rounded-xl h-25 w-full bg-size-[100%_auto] bg-no-repeat bg-position-[-80%] cursor-pointer">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="product-details flex flex-col items-center lg:items-start justify-center text-black gap-2 lg:gap-5 sm:w-[80%] lg:w-[40%] lg:pt-40">
+            <div class="stars flex gap-2 ">
+                {% for item in (1..5) %}
+                    {% render 'icon-product-star' %}
+                {% endfor %}
+                <span class="text-[13px]"> (149)</span>
+            </div>
+            <div class="text-center flex flex-col lg:gap-5 lg:text-left">
+                <div class="font-semibold flex flex-col lg:gap-3">
+                    <p class="text-xl lg:text-2xl">Joe’s Calamansi Pie</p>
+                    <p class="lg:text-xl">PHP 1,200.00</p>
+                </div>
+                <div class="font-extralight">
+                    <p>Our world-famous Calamansi Pie is made with love and real calamansi, offering a unique and delightful flavor you won’t find anywhere else. From our kitchen to your table, we take pride in sharing our passion for delicious, high-quality desserts that bring joy to every bite.</p>
+                </div>
+            </div>
+            <div class="w-full sm:w-auto">
+                <a class="btn sm:btn-block rounded-tl-xl rounded-br-xl w-[100%] hover:hover:bg-black/10 hover:text-black" href="#">Order now</a>
+            </div>
+        </div>
+        
+    </div>
+        
+</div>
+
+
+{% schema %}
+    {
+  "name": "product_page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image_slider_1",
+      "label": "Product Image Slider 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_slider_2",
+      "label": "Product Image Slider 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_slider_3",
+      "label": "Product Image Slider 3"
+    },
+  ]
+}
+{% endschema %}

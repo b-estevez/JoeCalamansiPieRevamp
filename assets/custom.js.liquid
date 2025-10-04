@@ -1,6 +1,53 @@
-function onToggleMenu(e,clickAttributeName){
-    let element = document.querySelector(clickAttributeName);
-    let navLinks = document.querySelector(`.nav-links`);
-     element.getAttribute('d') === 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5' ? element.setAttribute('d','M6 18 18 6M6 6l12 12') : element.setAttribute('d','M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5') ;
-    navLinks.classList.toggle('left-[-100%]');
+// product page functions
+
+const first_image = document.querySelector('.product-first-image');
+const second_image = document.querySelector('.product-second-image');
+const third_image = document.querySelector('.product-third-image');
+
+function transition(e){
+    const clickedImage = e.target;
+
+    // If left image was clicked
+    if(clickedImage.classList.contains("product-second-image")){
+        // Animate first image
+        first_image.classList.add("animate-productFirstImageLeftTransition");
+        // Animate clicked image
+        clickedImage.classList.add("animate-productSecondImageTransition");
+
+        // Swap images & remove animation class after animation ends
+        first_image.addEventListener("animationend", ()=> {
+            first_image.classList.remove("animate-productFirstImageLeftTransition");
+            clickedImage.classList.remove("animate-productSecondImageTransition");
+            swapImage(e);            
+        }, { once: true });
+    }
+
+        // If right image was clicked
+    if(clickedImage.classList.contains("product-third-image")){
+        // Animate first image
+        first_image.classList.add("animate-productFirstImageRightTransition");
+        // Animate clicked image
+        clickedImage.classList.add("animate-productThirdImageTransition");
+        
+        // Swap images & remove animation class after animation ends
+        first_image.addEventListener("animationend", ()=> {
+            first_image.classList.remove("animate-productFirstImageRightTransition");
+            clickedImage.classList.remove("animate-productThirdImageTransition");
+            swapImage(e);            
+        }, { once: true });
+    }
+
 }
+
+function swapImage(e){
+    first_image.style.backgroundImage;
+    const clickedImage = e.target.style.backgroundImage;
+    e.target.style.backgroundImage = first_image.style.backgroundImage;
+    first_image.style.backgroundImage = clickedImage;
+}
+
+second_image.addEventListener('click', transition);
+third_image.addEventListener('click', transition);
+// third_image.onclick = transition;
+
+// end of product page functions

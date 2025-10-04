@@ -1,11 +1,11 @@
-<div class="hero mt-20 py-20 lg:pt-5 xl:pt-40 bg-radial-[350px_at_54%_76%] md:bg-radial-[350px_at_50%_67%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 lg:bg-radial-[630px_at_77%_56%] xl:bg-radial-[790px_at_71%_56%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 h-[89vh] lg:h-[91vh]">
-    <div class="hero-content flex flex-col text-black lg:flex-row lg:justify-around lg:gap-10">
-        <div class="hero-text flex flex-col items-center lg:items-start justify-center gap-3">
+<div class="mt-20 py-20 lg:pt-60 bg-radial-[350px_at_54%_76%] md:bg-radial-[350px_at_50%_67%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 lg:bg-radial-[630px_at_77%_56%] xl:bg-radial-[790px_at_71%_56%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 h-[89vh] lg:h-[91vh]">
+    <div class="pt-10 md:pt-10 px-10 flex flex-col items-center text-black lg:flex-row lg:justify-center lg:gap-10">
+        <div class="flex flex-col items-center lg:items-start justify-center gap-3 lg:max-w-160">
             <div class="sub-heading font-semibold relative lg:translate-x-30">
                 <span class="text-left before:block before:w-27 before:h-0.5 before:bg-black before:absolute before:left-[-120px] before:top-3 after:block after:w-27 after:h-0.5 after:bg-black after:absolute after:right-[-120px] after:top-3 lg:after:hidden" >
-                    TART WITH A HE<span class="inline-block w-4 h-4 bg-no-repeat bg-contain bg-bottom relative top-0.5 hero-heart-tart"></span>RT</span>
+                    TART WITH A HE<span class="animate-bounce inline-block w-4 h-4 bg-no-repeat bg-contain bg-bottom relative top-0.5 hero-heart-tart"></span>RT</span>
             </div>
-            <div class="heading font-poppins text-[36px] lg:text-[50px] font-extrabold text-center lg:text-left">
+            <div class="heading font-poppins text-4xl lg:leading-15 lg:text-5xl font-extrabold text-center lg:text-left">
                 <h1>Joe's World Famous Calamansi Pie</h1>
             </div>
             <div class="description flex flex-col gap-10 items-center lg:items-start">
@@ -17,10 +17,10 @@
                         <button class="btn btn-outline px-10 rounded-tl-xl rounded-br-xl hover:hover:bg-black/10 hover:text-black">Our Story</button>
                         <button class="btn btn-neutral rounded-tl-xl rounded-br-xl hover:bg-hero-brown"> {% render 'icon-shopping-cart' %} Shop Now</button>
                     </div>
-                    <div class="hero-benefits flex gap-10 font-medium">
-                        <p class="before:bg-no-repeat before:mr-1.5 before:top-0.5 before:bg-contain before:inline-block before:relative before:h-3.5 before:w-3.5 hero-footer-check">100% Organic</p>
-                        <p class="before:bg-no-repeat before:mr-1.5 before:top-0.5 before:bg-contain before:inline-block before:relative before:h-3.5 before:w-3.5 hero-footer-check"> Fresh Daily</p>
-                        <p class="before:bg-no-repeat before:mr-1.5 before:top-0.5 before:bg-contain before:inline-block before:relative before:h-3.5 before:w-3.5 hero-footer-check"> Vitamin C</p>
+                    <div class="text-xs sm:text-lg flex gap-3 sm:gap-10 font-medium">
+                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">100% Organic</p>
+                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">Fresh Daily</p>
+                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">Vitamin C</p>
                     </div>
                 </div>
             </div>
@@ -28,9 +28,9 @@
         </div>
 
         
-
-         <div class="hero-image">
-            <img width="280" height="280" class=" -rotate-[0.100rad] w-103 lg:w-200 xl:scale-150 -translate-y-12 lg:translate-y-10" src="{{ 'hero-image.png' | asset_img_url: '1000x1000'}}"  alt="">
+        <div>
+         {% comment %} <div style="background-image:url('{{ 'hero-image.png' | asset_img_url: '1000x1000'}}');" class="product-first-image rounded-xl h-111 bg-size-[70%_80%] lg:bg-size-[90%_120%] bg-cover bg-no-repeat bg-position-[70%_50%] w-150"> {% endcomment %}
+            <img width="280" height="280" class=" -rotate-[0.100rad] w-103 lg:scale-150 -translate-y-4 lg:translate-y-10 " src="{{ 'hero-image.png' | asset_img_url: '1000x1000'}}"  alt="">
         </div>
     </div>
 

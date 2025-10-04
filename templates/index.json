@@ -15,7 +15,11 @@
     },
     "product_feature": {
       "type": "index-product",
-      "settings": {}
+      "settings": {
+        "product_image_slider_1": "shopify://shop_images/image-slide-2.jpg",
+        "product_image_slider_2": "shopify://shop_images/image-slide-3.jpg",
+        "product_image_slider_3": "shopify://shop_images/image-slide-1.jpg"
+      }
     },
     "testimonial": {
       "type": "index-testimonial",
@@ -24,8 +28,7 @@
     "newsletter": {
       "type": "index-newsletter",
       "settings": {}
-    },
-
+    }
   },
   "order": [
     "hero",

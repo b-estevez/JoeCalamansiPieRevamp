@@ -13,14 +13,8 @@
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-yellow-300: oklch(90.5% 0.182 98.111);
     --color-yellow-400: oklch(85.2% 0.199 91.936);
-    --color-green-400: oklch(79.2% 0.209 151.711);
-    --color-green-800: oklch(44.8% 0.119 151.328);
-    --color-green-900: oklch(39.3% 0.095 152.535);
     --color-green-950: oklch(26.6% 0.065 152.934);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -46,10 +40,8 @@
     --tracking-wide: 0.025em;
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
-    --radius-4xl: 2rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-bounce: bounce 1s infinite;
     --default-transition-duration: 150ms;
@@ -1199,26 +1191,11 @@
   .-right-2 {
     right: calc(var(--spacing) * -2);
   }
-  .-right-5 {
-    right: calc(var(--spacing) * -5);
-  }
-  .-right-10 {
-    right: calc(var(--spacing) * -10);
-  }
-  .right-0 {
-    right: calc(var(--spacing) * 0);
-  }
   .right-2 {
     right: calc(var(--spacing) * 2);
   }
-  .right-5 {
-    right: calc(var(--spacing) * 5);
-  }
   .right-\[5vw\] {
     right: 5vw;
-  }
-  .left-0 {
-    left: calc(var(--spacing) * 0);
   }
   .isolate {
     isolation: isolate;
@@ -1326,12 +1303,6 @@
   }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
-<<<<<<< Updated upstream
-  }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-=======
->>>>>>> Stashed changes
   }
   .mt-21 {
     margin-top: calc(var(--spacing) * 21);
@@ -1492,17 +1463,8 @@
   .h-90 {
     height: calc(var(--spacing) * 90);
   }
-<<<<<<< Updated upstream
-  .h-111 {
-    height: calc(var(--spacing) * 111);
-  }
-=======
->>>>>>> Stashed changes
   .h-full {
     height: 100%;
-  }
-  .min-h-\[100dvh\] {
-    min-height: 100dvh;
   }
   .min-h-\[100dvh\] {
     min-height: 100dvh;
@@ -1519,21 +1481,12 @@
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
-  .w-50 {
-    width: calc(var(--spacing) * 50);
-  }
   .w-60 {
     width: calc(var(--spacing) * 60);
   }
   .w-110 {
     width: calc(var(--spacing) * 110);
   }
-<<<<<<< Updated upstream
-  .w-150 {
-    width: calc(var(--spacing) * 150);
-  }
-=======
->>>>>>> Stashed changes
   .w-\[50\%\] {
     width: 50%;
   }
@@ -1546,23 +1499,10 @@
   .w-full {
     width: 100%;
   }
-<<<<<<< Updated upstream
-  .-translate-y-4 {
-    --tw-translate-y: calc(var(--spacing) * -4);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-=======
->>>>>>> Stashed changes
   .-translate-y-\[50\%\] {
     --tw-translate-y: calc(50% * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-<<<<<<< Updated upstream
-  .-rotate-\[0\.100rad\] {
-    rotate: calc(0.100rad * -1);
-  }
-=======
->>>>>>> Stashed changes
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -1642,25 +1582,8 @@
   .gap-15 {
     gap: calc(var(--spacing) * 15);
   }
-<<<<<<< Updated upstream
-  .overflow-x-hidden {
-    overflow-x: hidden;
-=======
   .rounded-2xl {
     border-radius: var(--radius-2xl);
-  }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
-  }
-  .rounded-md {
-    border-radius: var(--radius-md);
->>>>>>> Stashed changes
-  }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
-  }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
   }
   .rounded-md {
     border-radius: var(--radius-md);
@@ -1671,38 +1594,11 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .rounded-tl-4xl {
-    border-top-left-radius: var(--radius-4xl);
-  }
-  .rounded-tl-\[1\%\] {
-    border-top-left-radius: 1%;
-  }
-  .rounded-tl-\[5\%\] {
-    border-top-left-radius: 5%;
-  }
-  .rounded-tl-\[10\%\] {
-    border-top-left-radius: 10%;
-  }
-  .rounded-tl-\[10px\] {
-    border-top-left-radius: 10px;
-  }
-  .rounded-tl-\[20\%\] {
-    border-top-left-radius: 20%;
-  }
-  .rounded-tl-\[50px\] {
-    border-top-left-radius: 50px;
-  }
   .rounded-tl-\[60px\] {
     border-top-left-radius: 60px;
   }
   .rounded-tl-xl {
     border-top-left-radius: var(--radius-xl);
-  }
-  .rounded-br-4xl {
-    border-bottom-right-radius: var(--radius-4xl);
-  }
-  .rounded-br-\[50px\] {
-    border-bottom-right-radius: 50px;
   }
   .rounded-br-\[60px\] {
     border-bottom-right-radius: 60px;
@@ -1714,25 +1610,12 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-4 {
-    border-style: var(--tw-border-style);
-    border-width: 4px;
-  }
   .border-12 {
     border-style: var(--tw-border-style);
     border-width: 12px;
   }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
-  }
   .border-gray-300 {
     border-color: var(--color-gray-300);
-  }
-  .border-gray-400 {
-    border-color: var(--color-gray-400);
-  }
-  .border-gray-500 {
-    border-color: var(--color-gray-500);
   }
   .border-white {
     border-color: var(--color-white);
@@ -1760,7 +1643,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
-<<<<<<< Updated upstream
   }
   .bg-yellow-300 {
     background-color: var(--color-yellow-300);
@@ -1768,71 +1650,16 @@
   .bg-gradient-to-r {
     --tw-gradient-position: to right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-  .bg-radial-\[350px_at_54\%_76\%\] {
-    --tw-gradient-position: 350px at 54% 76%;
-    background-image: radial-gradient(var(--tw-gradient-stops,350px at 54% 76%));
-  }
-=======
-  }
-  .bg-yellow-300 {
-    background-color: var(--color-yellow-300);
-  }
-  .bg-gradient-to-r {
-    --tw-gradient-position: to right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
-  }
->>>>>>> Stashed changes
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.3\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.3),rgba(0,0,0,0.3));
-  }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.7\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.7),rgba(0,0,0,0.3));
   }
   .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(0\,0\,0\,0\)\)\] {
     background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0));
   }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(0\,0\,0\,0\.1\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.1));
-  }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3));
-  }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(225\,225\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(225,225,0.3));
-  }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,1\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,0.3));
-  }
-  .bg-\[linear-gradient\(to_right\,rgba\(225\,225\,0\,0\.8\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(225,225,0,0.8),rgba(0,0,0,0.3));
-  }
   .from-\[\#1e2026\] {
     --tw-gradient-from: #1e2026;
-<<<<<<< Updated upstream
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .from-hero-yellow1 {
-    --tw-gradient-from: var(--color-hero-yellow1);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .via-hero-yellow2 {
-    --tw-gradient-via: var(--color-hero-yellow2);
-    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
-  }
-  .to-\[\#000000\] {
-    --tw-gradient-to: #000000;
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .to-hero-yellow3 {
-    --tw-gradient-to: var(--color-hero-yellow3);
-=======
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-\[\#000000\] {
     --tw-gradient-to: #000000;
->>>>>>> Stashed changes
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .bg-contain {
@@ -1841,12 +1668,6 @@
   .bg-cover {
     background-size: cover;
   }
-<<<<<<< Updated upstream
-  .bg-size-\[70\%_80\%\] {
-    background-size: 70% 80%;
-  }
-=======
->>>>>>> Stashed changes
   .bg-size-\[100\%_auto\] {
     background-size: 100% auto;
   }
@@ -1856,35 +1677,11 @@
   .bg-center {
     background-position: center;
   }
-  .bg-position-\[-10\%_35\%\] {
-    background-position: -10% 35%;
-  }
   .bg-position-\[-80\%\] {
     background-position: -80%;
   }
-  .bg-position-\[10\%_35\%\] {
-    background-position: 10% 35%;
-  }
-  .bg-position-\[15\%_35\%\] {
-    background-position: 15% 35%;
-  }
-  .bg-position-\[22\%_35\%\] {
-    background-position: 22% 35%;
-  }
-  .bg-position-\[50\%_35\%\] {
-    background-position: 50% 35%;
-  }
-<<<<<<< Updated upstream
-  .bg-position-\[70\%_50\%\] {
-    background-position: 70% 50%;
-  }
-=======
->>>>>>> Stashed changes
   .bg-no-repeat {
     background-repeat: no-repeat;
-  }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -1892,20 +1689,8 @@
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
-  .p-10 {
-    padding: calc(var(--spacing) * 10);
-  }
   .p-15 {
     padding: calc(var(--spacing) * 15);
-  }
-  .p-20 {
-    padding: calc(var(--spacing) * 20);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .px-3\.5 {
     padding-inline: calc(var(--spacing) * 3.5);
@@ -1913,17 +1698,8 @@
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
-<<<<<<< Updated upstream
-  .px-10 {
-    padding-inline: calc(var(--spacing) * 10);
-  }
-=======
->>>>>>> Stashed changes
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
   }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
@@ -1934,12 +1710,6 @@
   .pt-7 {
     padding-top: calc(var(--spacing) * 7);
   }
-<<<<<<< Updated upstream
-  .pt-10 {
-    padding-top: calc(var(--spacing) * 10);
-  }
-=======
->>>>>>> Stashed changes
   .pt-\[9vh\] {
     padding-top: 9vh;
   }
@@ -2024,101 +1794,11 @@
       color: color-mix(in oklab, var(--color-black) 85%, transparent) !important;
     }
   }
-  .\!text-white\/85 {
-    color: color-mix(in srgb, #fff 85%, transparent) !important;
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-white) 85%, transparent) !important;
-    }
-  }
   .text-black {
     color: var(--color-black);
   }
-  .text-green-400 {
-    color: var(--color-green-400);
-  }
-  .text-green-800 {
-    color: var(--color-green-800);
-  }
-  .text-green-900 {
-    color: var(--color-green-900);
-  }
   .text-green-950 {
     color: var(--color-green-950);
-  }
-  .text-green-950\/5 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 5%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 5%, transparent);
-    }
-  }
-  .text-green-950\/10 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
-    }
-  }
-  .text-green-950\/20 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 20%, transparent);
-    }
-  }
-<<<<<<< Updated upstream
-  .text-green-400 {
-    color: var(--color-green-400);
-  }
-  .text-green-800 {
-    color: var(--color-green-800);
-  }
-  .text-green-900 {
-    color: var(--color-green-900);
-  }
-  .text-green-950 {
-    color: var(--color-green-950);
-  }
-  .text-green-950\/5 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 5%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 5%, transparent);
-    }
-  }
-  .text-green-950\/10 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
-    }
-  }
-  .text-green-950\/20 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 20%, transparent);
-    }
-  }
-=======
->>>>>>> Stashed changes
-  .text-green-950\/30 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 30%, transparent);
-    }
-  }
-  .text-green-950\/35 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 35%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 35%, transparent);
-    }
-  }
-  .text-green-950\/40 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 40%, transparent);
-    }
-  }
-  .text-green-950\/60 {
-    color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-green-950) 60%, transparent);
-    }
   }
   .text-green-950\/70 {
     color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 70%, transparent);
@@ -2197,21 +1877,6 @@
       position: absolute;
     }
   }
-<<<<<<< Updated upstream
-  .before\:relative {
-    &::before {
-      content: var(--tw-content);
-      position: relative;
-    }
-  }
-  .before\:top-0 {
-    &::before {
-      content: var(--tw-content);
-      top: calc(var(--spacing) * 0);
-    }
-  }
-=======
->>>>>>> Stashed changes
   .before\:top-3 {
     &::before {
       content: var(--tw-content);
@@ -2221,33 +1886,9 @@
   .before\:left-\[-65px\] {
     &::before {
       content: var(--tw-content);
-<<<<<<< Updated upstream
-      left: calc(var(--spacing) * 0);
-    }
-  }
-  .before\:left-\[-65px\] {
-    &::before {
-      content: var(--tw-content);
       left: -65px;
     }
   }
-  .before\:left-\[-120px\] {
-    &::before {
-      content: var(--tw-content);
-      left: -120px;
-    }
-  }
-  .before\:mr-1 {
-    &::before {
-      content: var(--tw-content);
-      margin-right: calc(var(--spacing) * 1);
-    }
-  }
-=======
-      left: -65px;
-    }
-  }
->>>>>>> Stashed changes
   .before\:block {
     &::before {
       content: var(--tw-content);
@@ -2266,52 +1907,10 @@
       width: calc(var(--spacing) * 15);
     }
   }
-<<<<<<< Updated upstream
-  .before\:w-2\.5 {
-    &::before {
-      content: var(--tw-content);
-      width: calc(var(--spacing) * 2.5);
-    }
-  }
-  .before\:w-15 {
-    &::before {
-      content: var(--tw-content);
-      width: calc(var(--spacing) * 15);
-    }
-  }
-  .before\:w-27 {
-    &::before {
-      content: var(--tw-content);
-      width: calc(var(--spacing) * 27);
-    }
-  }
-  .before\:bg-black {
-    &::before {
-      content: var(--tw-content);
-      background-color: var(--color-black);
-    }
-  }
-=======
->>>>>>> Stashed changes
   .before\:bg-yellow-300 {
     &::before {
       content: var(--tw-content);
       background-color: var(--color-yellow-300);
-<<<<<<< Updated upstream
-    }
-  }
-  .before\:bg-contain {
-    &::before {
-      content: var(--tw-content);
-      background-size: contain;
-    }
-  }
-  .before\:bg-no-repeat {
-    &::before {
-      content: var(--tw-content);
-      background-repeat: no-repeat;
-=======
->>>>>>> Stashed changes
     }
   }
   .after\:absolute {
@@ -2327,15 +1926,6 @@
     }
   }
   .after\:right-\[-65px\] {
-<<<<<<< Updated upstream
-    &::after {
-      content: var(--tw-content);
-      right: -65px;
-    }
-  }
-  .after\:right-\[-120px\] {
-=======
->>>>>>> Stashed changes
     &::after {
       content: var(--tw-content);
       right: -65px;
@@ -2354,15 +1944,6 @@
     }
   }
   .after\:w-15 {
-<<<<<<< Updated upstream
-    &::after {
-      content: var(--tw-content);
-      width: calc(var(--spacing) * 15);
-    }
-  }
-  .after\:w-27 {
-=======
->>>>>>> Stashed changes
     &::after {
       content: var(--tw-content);
       width: calc(var(--spacing) * 15);
@@ -2371,34 +1952,7 @@
   .after\:bg-yellow-300 {
     &::after {
       content: var(--tw-content);
-<<<<<<< Updated upstream
-      background-color: var(--color-black);
-    }
-  }
-  .after\:bg-yellow-300 {
-    &::after {
-      content: var(--tw-content);
       background-color: var(--color-yellow-300);
-    }
-  }
-  .hover\:bg-black\/10 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, #000 10%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
-        }
-      }
-    }
-  }
-  .hover\:bg-hero-brown {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-hero-brown);
-      }
-=======
-      background-color: var(--color-yellow-300);
->>>>>>> Stashed changes
     }
   }
   .hover\:bg-red-100 {
@@ -2514,43 +2068,6 @@
       }
     }
   }
-<<<<<<< Updated upstream
-  .sm\:before\:left-\[-114px\] {
-    @media (width >= 40rem) {
-      &::before {
-        content: var(--tw-content);
-        left: -114px;
-      }
-    }
-  }
-  .sm\:before\:mr-1\.5 {
-=======
-  .sm\:before\:w-27 {
->>>>>>> Stashed changes
-    @media (width >= 40rem) {
-      &::before {
-        content: var(--tw-content);
-        width: calc(var(--spacing) * 27);
-      }
-    }
-  }
-  .sm\:after\:right-\[-120px\] {
-    @media (width >= 40rem) {
-      &::after {
-        content: var(--tw-content);
-        right: -120px;
-      }
-    }
-  }
-  .sm\:after\:w-27 {
-    @media (width >= 40rem) {
-      &::after {
-        content: var(--tw-content);
-        width: calc(var(--spacing) * 27);
-      }
-    }
-  }
-<<<<<<< Updated upstream
   .sm\:before\:w-27 {
     @media (width >= 40rem) {
       &::before {
@@ -2573,28 +2090,11 @@
         content: var(--tw-content);
         width: calc(var(--spacing) * 27);
       }
-    }
-  }
-=======
->>>>>>> Stashed changes
-  .md\:block {
-    @media (width >= 48rem) {
-      display: block;
     }
   }
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:bg-position-\[auto_180px\] {
-    @media (width >= 48rem) {
-      background-position: auto 180px;
-    }
-  }
-  .md\:bg-position-\[auto_180px\] {
-    @media (width >= 48rem) {
-      background-position: auto 180px;
     }
   }
   .md\:px-15 {
@@ -2603,18 +2103,8 @@
     }
   }
   .md\:py-20 {
-<<<<<<< Updated upstream
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:pt-10 {
-    @media (width >= 48rem) {
-      padding-top: calc(var(--spacing) * 10);
-=======
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 20);
->>>>>>> Stashed changes
     }
   }
   .lg\:absolute {
@@ -2694,23 +2184,6 @@
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
-<<<<<<< Updated upstream
-  .lg\:translate-y-10 {
-    @media (width >= 64rem) {
-      --tw-translate-y: calc(var(--spacing) * 10);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-  }
-  .lg\:scale-150 {
-    @media (width >= 64rem) {
-      --tw-scale-x: 150%;
-      --tw-scale-y: 150%;
-      --tw-scale-z: 150%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-=======
->>>>>>> Stashed changes
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
@@ -2766,98 +2239,9 @@
       border-radius: var(--radius-sm);
     }
   }
-  .lg\:bg-position-\[20\%_75\%\] {
-    @media (width >= 64rem) {
-      background-position: 20% 75%;
-    }
-  }
-<<<<<<< Updated upstream
-  .lg\:bg-size-\[90\%_120\%\] {
-=======
   .lg\:bg-position-\[22\%_35\%\] {
     @media (width >= 64rem) {
       background-position: 22% 35%;
-    }
-  }
-  .lg\:bg-position-\[22\%_45\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 45%;
-    }
-  }
-  .lg\:bg-position-\[22\%_55\%\] {
->>>>>>> Stashed changes
-    @media (width >= 64rem) {
-      background-position: 22% 55%;
-    }
-  }
-<<<<<<< Updated upstream
-  .lg\:bg-position-\[20\%_75\%\] {
-    @media (width >= 64rem) {
-      background-position: 20% 75%;
-    }
-  }
-  .lg\:bg-position-\[22\%_35\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 35%;
-    }
-  }
-  .lg\:bg-position-\[22\%_45\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 45%;
-    }
-  }
-  .lg\:bg-position-\[22\%_55\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 55%;
-    }
-  }
-  .lg\:bg-position-\[22\%_75\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 75%;
-    }
-  }
-  .lg\:bg-position-\[auto\] {
-    @media (width >= 64rem) {
-      background-position: auto;
-    }
-  }
-  .lg\:bg-position-\[auto_-80px\] {
-    @media (width >= 64rem) {
-      background-position: auto -80px;
-    }
-  }
-  .lg\:bg-position-\[auto_75\%\] {
-    @media (width >= 64rem) {
-=======
-  .lg\:bg-position-\[22\%_75\%\] {
-    @media (width >= 64rem) {
-      background-position: 22% 75%;
-    }
-  }
-  .lg\:bg-position-\[auto\] {
-    @media (width >= 64rem) {
-      background-position: auto;
-    }
-  }
-  .lg\:bg-position-\[auto_-80px\] {
-    @media (width >= 64rem) {
-      background-position: auto -80px;
-    }
-  }
-  .lg\:bg-position-\[auto_75\%\] {
-    @media (width >= 64rem) {
->>>>>>> Stashed changes
-      background-position: auto 75%;
-    }
-  }
-  .lg\:bg-position-\[auto_75\] {
-    @media (width >= 64rem) {
-      background-position: auto 75;
-    }
-  }
-  .lg\:bg-position-\[auto_180px\] {
-    @media (width >= 64rem) {
-      background-position: auto 180px;
     }
   }
   .lg\:px-20 {
@@ -2880,14 +2264,6 @@
       padding-top: calc(var(--spacing) * 40);
     }
   }
-<<<<<<< Updated upstream
-  .lg\:pt-60 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 60);
-    }
-  }
-=======
->>>>>>> Stashed changes
   .lg\:text-left {
     @media (width >= 64rem) {
       text-align: left;
@@ -2925,15 +2301,6 @@
       }
     }
   }
-<<<<<<< Updated upstream
-  .xl\:bg-radial-\[790px_at_71\%_56\%\] {
-    @media (width >= 80rem) {
-      --tw-gradient-position: 790px at 71% 56%;
-      background-image: radial-gradient(var(--tw-gradient-stops,790px at 71% 56%));
-    }
-  }
-=======
->>>>>>> Stashed changes
   .xl\:bg-size-\[100dvw_64dvw\] {
     @media (width >= 80rem) {
       background-size: 100dvw 64dvw;

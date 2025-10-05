@@ -80,3 +80,33 @@ third_image.addEventListener('click', transition);
 // third_image.onclick = transition;
 
 // end of product page functions
+
+
+
+// Function to handle the toast
+function autoHideToast(toastElementId, durationMilliseconds = 5000) {
+  const toast = document.getElementById(toastElementId);
+
+  // 1. Check if the element exists on the page
+  if (toast) {
+    // 2. Start a timer (e.g., 5000ms or 5 seconds)
+    setTimeout(() => {
+      // 3. Action to hide the toast
+      
+      // OPTION A: Hide via CSS class (Recommended for animations)
+      // Add a class that sets opacity to 0 and visibility to hidden
+      toast.classList.add('hidden'); 
+      
+      // OPTION B: Simple inline style hide (Less elegant)
+      // toast.style.display = 'none'; 
+      
+    }, durationMilliseconds);
+  }
+}
+
+// 4. Call the function when the page loads
+// The toast will only be present if form.posted_successfully? was true on the server
+document.addEventListener('DOMContentLoaded', () => {
+  // Pass the ID of your success message element
+  autoHideToast('subscribe_toast', 4000); // Hide after 6 seconds
+});

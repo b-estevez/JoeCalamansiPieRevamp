@@ -1,3 +1,32 @@
+// Nav scroll
+const headerTag = document.querySelector('header');
+
+// Get the offset position of the navbar
+var sticky = headerTag.offsetTop;
+window.onscroll = function() {
+    changeNav();
+}
+
+function changeNav(){
+    if (window.pageYOffset > sticky) {
+        headerTag.classList.add("bg-white","text-green-950");
+        document.querySelectorAll('header .text-white')?.forEach((e) => e.classList.replace('text-white','text-green-950'));
+        // document.querySelectorAll('header .bg-white')?.forEach((e) => e.classList.replace('bg-white','bg-black'));
+        document.querySelectorAll('header .bg-white\\/10')?.forEach((e) => e.classList.replace('bg-white/10','bg-black/10'));
+        document.querySelector('#jcc_logo')?.classList.remove('invisible');
+    } else {
+        headerTag.classList.remove("bg-white","text-green-950");
+        // document.querySelectorAll('header .bg-black')?.forEach((e) => e.classList.replace('bg-black','bg-white'));
+        document.querySelectorAll('header .text-green-950')?.forEach((e) => e.classList.replace('text-green-950','text-white'));
+        document.querySelectorAll('header .bg-black\\/10')?.forEach((e) => e.classList.replace('bg-black/10','bg-white/10'));
+        document.querySelector('#jcc_logo')?.classList.add('invisible');
+      
+    }
+}
+
+// End of Nav scroll
+
+
 // product page functions
 
 const first_image = document.querySelector('.product-first-image');

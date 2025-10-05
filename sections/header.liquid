@@ -1,31 +1,34 @@
-<header class="drawer bg-white pt-7 pb-2 lg:min-h-40 fixed top-0 z-1">
+
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex justify-evenly items-center lg:items-center gap-1 lg:justify-around py-2">
-    <div class="hidden lg:flex lg:gap-2 text-black">
-      {% render 'icon-phone' %}
-      <span> (555) 123-4567</span>
+    <div class="hidden lg:flex lg:gap-2 text-white">
+      <div class="flex flex-col">
+        <span class="font-bold"> Joe's Calamansi Confection</span>
+        <span> (+63) 928 312 6872</span>
+      </div>
     </div>
     <div class="flex ml-3 lg:hidden items-center ml-2">
       <a href="#" >
-        <label for="my-drawer" class="drawer-button">
+        <label for="my-drawer" class="drawer-button text-white">
           {% render 'icon-hamburger-menu' %}
         </label>
       </a>
     </div>
 
-    <nav class="nav-links bg-white min-h-max top-[0] h-full lg:h-auto lg:mt-auto">
-      <a href="/" class="lg:absolute lg:top-2 lg:left-[50%] lg:translate-x-[-50%]">
+    <nav class="min-h-max top-[0] h-full lg:h-auto lg:mt-auto">
+      <a id="jcc_logo" href="/" class="hidden invisible transition duration-200 ease-in-out lg:block lg:absolute lg:top-2 lg:left-[50%] lg:translate-x-[-50%]">
         <img src="{{section.settings.header_logo | image_url }}" height="auto" width="150" alt="JCC logo" class="lg:w-50.5">
       </a>
-      <ul class="hidden lg:flex flex-col lg:flex-row gap-6 text-[14px] ml-[-60px]">
+      <ul class="hidden lg:flex flex-col lg:flex-row gap-6 text-[14px] ml-[-60px] mt-21">
         {% for link in linklists.main-menu.links %}
           {% if link.active %}
-            <li class="lg:rounded-sm text-black/65">
-              <a class="bg-black/10 px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+            <li class="lg:rounded-sm text-white">
+              {% comment %} Revert this version once the pages are complete <a class="bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a> {% endcomment %}
+              <a class="px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
             </li>
             {% else %}
-            <li class="lg:rounded-sm text-black/65">
-              <a class="hover:bg-black/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+            <li class="lg:rounded-sm text-white">
+              <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -33,10 +36,10 @@
       </ul>
     </nav>
 
-    <ul id="shopify-icons" class="flex mr-5 lg:mr-0 lg:flex-row gap-1 lg:gap-5 text-black/70">
+    <ul id="shopify-icons" class="flex mr-5 lg:mr-0 lg:flex-row gap-1 lg:gap-5 text-white/70">
       {% comment %} <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-search' %}</li></a> {% endcomment %}
-      <a href="#"><li class="p-2 rounded-sm hover:bg-black/10">{% render 'icon-user' %}</li></a>
-      <a href="#"><li class="p-2 rounded-sm hover:bg-black/10">{% render 'icon-shopping-bag' %}</li></a>
+      <a href="#"><li class="p-2 rounded-sm text-white hover:bg-white/10">{% render 'icon-user' %}</li></a>
+      <a href="#"><li class="p-2 rounded-sm text-white hover:bg-white/10">{% render 'icon-shopping-bag' %}</li></a>
     </ul>
   </div>
 
@@ -46,26 +49,34 @@
       <label for="my-drawer" aria-label="close sidebar" class="">
         {% render 'icon-close-menu' %}
       </label>
+          {% comment %}
+          Original, revert this version once the pages are complete 
           {% for link in linklists.main-menu.links %}
             {% if link.active %}
-              <li class="mx-8 lg:rounded-sm text-black/85">
-                <a class="tracking-wide bg-black/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+              <li class="mx-8 lg:rounded-sm text-white/85">
+                <a class="tracking-wide bg-white/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
               </li>
               {% else %}
-              <li class="mx-8 lg:rounded-sm text-black/85">
-                <a class="tracking-wide hover:bg-black/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+              <li class="mx-8 lg:rounded-sm text-white/85">
+                <a class="tracking-wide hover:bg-white/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %} {% endcomment %}
+
+          {% for link in linklists.main-menu.links %}
+            {% if link.active %}
+              <li class="mx-8 lg:rounded-sm !text-black/85">
+                <a class="tracking-wide !bg-white/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+              </li>
+              {% else %}
+              <li class="mx-8 lg:rounded-sm !text-black/85">
+                <a class="tracking-wide !hover:bg-black/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
               </li>
             {% endif %}
           {% endfor %}
         
     </ul>
   </div>
-  
-  
-  
- 
-  
-</header>
 
 {% schema %}
 {
@@ -81,6 +92,8 @@
       "id": "header_logo",
       "label": "Header Logo"
     }
-  ]
+  ],
+  "tag": "header",
+  "class": "pt-7 pb-2 lg:min-h-40 fixed top-0 z-1 w-full transition delay-150 duration-300 ease-in-out"
 }
 {% endschema %}

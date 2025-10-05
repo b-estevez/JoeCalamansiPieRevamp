@@ -1,1 +1,18 @@
-<h1>NEWSLETTER SECTION</h1>
+<div class="text-green-950 flex flex-col gap-3 items-center bg-yellow-300 rounded-2xl rounded-tl-[60px] rounded-br-[60px] p-15">
+    <h2 class="font-poppins text-2xl font-bold">Get a Taste of Fresh Updates!</h2>
+    <p>Be the first to know about our newest treats, exclusive discounts, and sweet surprises straight to your inbox.</p>
+    
+    <div class="relative mt-5">
+        <input class="bg-white text-green-950/70 border-1 border-gray-300 rounded-md p-3 text-sm font-inter w-[400px]" type="email" placeholder="Enter your Email">
+        <button style="background-image: url('{{ 'newsletter-arrow-submit.png' | file_img_url }}')" class="absolute cursor-pointer top-[50%] -translate-y-[50%] bg-center bg-no-repeat right-2 w-10 h-10" type="submit"> </button>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "newsletter",
+        "tag": "section",
+        "class": "bg-white py-40 flex justify-center"
+    }
+{% endschema %}

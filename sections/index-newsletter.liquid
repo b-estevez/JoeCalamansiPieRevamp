@@ -3,18 +3,26 @@
     <p>Be the first to know about our newest treats, exclusive discounts, and sweet surprises straight to your inbox.</p>
     {%- form 'customer' -%}
     <div class="relative mt-5">
-        <input type="email" id="email" name="contact[email]" value="{{ form.email }}" class="bg-white text-green-950/70 border-1 border-gray-300 rounded-md p-3 text-sm font-inter w-[400px]"  placeholder="Enter your Email" required>
+        <input type="email" id="email" name="contact[email]" value="{{ form.email }}" class="bg-white text-green-950/70 border-1 border-gray-300 rounded-md p-3 text-sm font-inter sm:w-[400px]"  placeholder="Enter your Email" required>
         <button style="background-image: url('{{ 'newsletter-arrow-submit.png' | file_img_url }}')" class="absolute cursor-pointer top-[50%] -translate-y-[50%] bg-center bg-no-repeat right-2 w-10 h-10" type="submit"> </button>
     </div>
-   
+
          {% if form.posted_successfully? %}
-            <p class="text-xs text-center mt-5 font-semibold text-green-500">Subscribed Successfully!</p>
+           <div id="subscribe_toast" class="toast toast-center z-3">
+                <div class="alert alert-success border-none bg-yellow-300">
+                    <span>Subscribe successfully.</span>
+                </div>
+            </div>
         {% endif %}
 
         {% if form.errors %}
-            <p class="text-xs text-center mt-5 font-semibold text-red-500">
-            {{ form.errors | default_errors }}
-            </p>
+            <div id="subscribe_toast" class="toast toast-center z-3">
+                <div class="alert alert-success border-none bg-yellow-300">
+                    <span> {{ form.errors | default_errors }} </span>
+                </div>
+            </div>
+           
+            
         {% endif %}
         
     {%- endform -%}

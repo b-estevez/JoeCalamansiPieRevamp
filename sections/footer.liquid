@@ -1,41 +1,34 @@
-<footer>
-  <div class="footer__copyright">
-    &copy;
-    {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
+<div class="footer-wrap bg-hero-yellow2 before:content-['hello'] before:bg-white before:block">
+  <div class="mb-[10vh] mt-[5vh]">
+    <a href="/">
+        <img src="/cdn/shop/files/banner_12.png?v=1754451509" height="auto" width="300" alt="JCC logo" class="my-0 mx-auto">
+    </a>
   </div>
-
-  <div class="footer__links">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
-
-  <div class="footer__payment">
-    {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
-        {{ type | payment_type_svg_tag }}
+  <div class="mb-[50px] lg:pr-[5vh] w-[80%] my-0 mx-auto">
+    <ul class="flex flex-col items-center lg:flex-row lg:items-start lg:gap-20">
+      {% for link in linklists.footer.links %}
+        <li class="flex-1">
+          <ul class="flex flex-col text-[14px] text-center font-inter pb-[32px] lg:pb-[24px]">
+            <li class="text-footer-header pb-[12px]">
+              <a class="font-bold" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+            {% for child_link in link.links %}
+            <li class="text-footer-body pb-[12px]">
+              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </li>      
       {% endfor %}
-    {% endif %}
+    </ul>
   </div>
-</footer>
 
-{% stylesheet %}
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
-  }
-  footer .footer__links,
-  footer .footer__payment {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
+  <div>
+    <p class="text-footer-body/70 text-center text-[11px] font-inter">©2025 Joe's Calamansi Confection LLC. All Rights Reserved</p>
+  </div>
+
+</div>
+
 
 {% schema %}
 {
@@ -51,7 +44,14 @@
       "id": "show_payment_icons",
       "label": "t:labels.show_payment_icons",
       "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
     }
-  ]
+  ],
+  "tag": "footer", 
+  "class": "bg-transparent"
 }
 {% endschema %}

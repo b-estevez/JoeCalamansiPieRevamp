@@ -7,12 +7,6 @@
         <button style="background-image: url('{{ 'newsletter-arrow-submit.png' | file_img_url }}')" class="absolute cursor-pointer top-[50%] -translate-y-[50%] bg-center bg-no-repeat right-2 w-10 h-10" type="submit"> </button>
     </div>
 
-         <div id="subscribe_toast" class="toast toast-center z-3 bottom-25">
-                <div class="alert alert-success border-none">
-                    <span>Subscribe successfully.</span>
-                </div>
-            </div>
-
          {% if form.posted_successfully? %}
            <div id="subscribe_toast" class="toast toast-left z-3 bottom-25">
                 <div class="alert alert-success border-none">

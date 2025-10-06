@@ -1846,6 +1846,18 @@
   .pt-7 {
     padding-top: calc(var(--spacing) * 7);
   }
+  .pt-40 {
+    padding-top: calc(var(--spacing) * 40);
+  }
+  .pt-50 {
+    padding-top: calc(var(--spacing) * 50);
+  }
+  .pt-60 {
+    padding-top: calc(var(--spacing) * 60);
+  }
+  .pt-70 {
+    padding-top: calc(var(--spacing) * 70);
+  }
   .pt-\[9vh\] {
     padding-top: 9vh;
   }

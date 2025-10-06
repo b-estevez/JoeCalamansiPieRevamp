@@ -1,39 +1,34 @@
-<div class="mt-20 py-20 lg:pt-60 bg-radial-[350px_at_54%_76%] md:bg-radial-[350px_at_50%_67%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 lg:bg-radial-[630px_at_77%_56%] xl:bg-radial-[790px_at_71%_56%] from-hero-yellow1 via-hero-yellow2 to-hero-yellow3 ">
-    <div class="pt-10 md:pt-10 px-10 flex flex-col items-center text-black lg:flex-row lg:justify-center lg:gap-10">
+<section style="background-image: url('{{ 'hero-image-1.jpg' | file_img_url: '4000x4000' }}')" class="bg-cover  xl:bg-size-[100dvw_64dvw] bg-no-repeat bg-bottom-center lg:bg-position-[22%_35%]  min-h-[100dvh]">
+    <div class="bg-[linear-gradient(to_right,rgba(0,0,0,0.8),rgba(0,0,0,0))] min-h-[100dvh] py-20 pt-70 sm:px-10 flex flex-col items-center text-white justify-center lg:flex-row lg:justify-start lg:px-60 lg:gap-10">
         <div class="flex flex-col items-center lg:items-start justify-center gap-3 lg:max-w-160">
+            <div class="heading font-poppins lg:leading-15 text-5xl font-extrabold text-center lg:text-left">
+                <h1>Joe's World Famous <span class="text-yellow-300">Calamansi Pie</span></h1>
+            </div>
+
             <div class="sub-heading font-semibold relative lg:translate-x-30">
-                <span class="text-left before:block before:w-27 before:h-0.5 before:bg-black before:absolute before:left-[-120px] before:top-3 after:block after:w-27 after:h-0.5 after:bg-black after:absolute after:right-[-120px] after:top-3 lg:after:hidden" >
-                    TART WITH A HE<span class="animate-bounce inline-block w-4 h-4 bg-no-repeat bg-contain bg-bottom relative top-0.5 hero-heart-tart"></span>RT</span>
+                <span class="text-left text-yellow-300 before:block before:w-15 sm:before:w-27 before:h-0.5 before:bg-yellow-300 before:absolute before:left-[-65px] sm:before:left-[-114px] before:top-3 after:block after:w-15 sm:after:w-27 after:h-0.5 after:bg-yellow-300 after:absolute after:right-[-65px] sm:after:right-[-120px] after:top-3 lg:after:hidden" >
+                    TART WITH A HE<span style="background-image: url('{{ 'hero-tart-heart.png' | file_img_url }}')" class="animate-bounce inline-block w-4 h-4 bg-no-repeat bg-contain bg-bottom relative top-0.5"></span>RT</span>
             </div>
-            <div class="heading font-poppins text-4xl lg:leading-15 lg:text-5xl font-extrabold text-center lg:text-left">
-                <h1>Joe's World Famous Calamansi Pie</h1>
-            </div>
+            
             <div class="description flex flex-col gap-10 items-center lg:items-start">
                 <p class="text-center lg:text-left text-xl">
                     A delicious pie made with the fresh, tangy taste of calamansi, perfectly balanced with sweetness.
                 </p>
                 <div class="flex flex-col items-center lg:items-start gap-5 lg:gap-10">
                     <div class="hero-buttons flex gap-5">
-                        <button class="btn btn-outline px-10 rounded-tl-xl rounded-br-xl hover:hover:bg-black/10 hover:text-black">Our Story</button>
-                        <button class="btn btn-neutral rounded-tl-xl rounded-br-xl hover:bg-hero-brown"> {% render 'icon-shopping-cart' %} Shop Now</button>
+                        <button class="btn btn-outline sm:px-10 rounded-tl-xl rounded-br-xl hover:hover:bg-white hover:text-black">Our Story</button>
+                        <button class="btn bg-yellow-300 text-black rounded-tl-xl rounded-br-xl hover:bg-yellow-400"> {% render 'icon-shopping-cart' %} Shop Now</button>
                     </div>
-                    <div class="text-xs sm:text-lg flex gap-3 sm:gap-10 font-medium">
-                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">100% Organic</p>
-                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">Fresh Daily</p>
-                        <p class="before:bg-no-repeat before:mr-1 sm:before:mr-1.5 before:top-0 before:left-0 sm:before:top-0.5 before:bg-contain before:inline-block before:relative before:h-2.5 before:w-2.5 sm:before:h-3.5 sm:before:w-3.5 hero-footer-check">Vitamin C</p>
+                    <div class="text-xs sm:text-lg flex gap-3 sm:gap-10 font-medium text-yellow-300">
+                        <p class="flex sm:gap-1 items-center"> {% render 'icon-hero-check' %} 100% Organic</p>
+                        <p class="flex sm:gap-1 items-center"> {% render 'icon-hero-check' %} Fresh Daily</p>
+                        <p class="flex sm:gap-1 items-center"> {% render 'icon-hero-check' %} Vitamin C</p>
                     </div>
                 </div>
             </div>
             
         </div>
-
-        
-        <div>
-         {% comment %} <div style="background-image:url('{{ 'hero-image.png' | asset_img_url: '1000x1000'}}');" class="product-first-image rounded-xl h-111 bg-size-[70%_80%] lg:bg-size-[90%_120%] bg-cover bg-no-repeat bg-position-[70%_50%] w-150"> {% endcomment %}
-            <img width="280" height="280" class=" -rotate-[0.100rad] w-103 lg:scale-150 -translate-y-4 lg:translate-y-10 " src="{{ 'hero-image.png' | asset_img_url: '1000x1000'}}"  alt="">
-        </div>
     </div>
+</section>
+{% comment %} <div class="absolute inset-0 bg-gradient-to-r from-[#1e2026] to-[#000000] opacity-90"></div> {% endcomment %}
 
-   
-    
-</div>

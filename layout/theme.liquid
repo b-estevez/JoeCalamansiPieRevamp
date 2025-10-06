@@ -12,13 +12,13 @@
     {{ content_for_header }}
   </head>
 
-  <body class="font-montserrat h-screen overflow-x-hidden">
+  <body class="font-montserrat">
     {% sections 'header-group' %}
 
     {{ content_for_layout }}
      
 
-    {% sections 'footer-group' %}
+    {% comment %} {% sections 'footer-group' %} {% endcomment %}
     <script defer src="{{ 'custom.js' | asset_url }}"> </script>
   </body>
 </html>

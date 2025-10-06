@@ -1204,6 +1204,12 @@
       opacity: 20%;
     }
   }
+  .drawer {
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-auto-columns: max-content auto;
+  }
   .absolute {
     position: absolute;
   }
@@ -1788,6 +1794,12 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .\!bg-green-950\/10 {
+    background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent) !important;
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent) !important;
+    }
+  }
   .\!bg-white\/10 {
     background-color: color-mix(in srgb, #fff 10%, transparent) !important;
     @supports (color: color-mix(in lab, red, red)) {
@@ -1801,6 +1813,15 @@
     background-color: color-mix(in srgb, #000 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+    }
+  }
+  .bg-green-950 {
+    background-color: var(--color-green-950);
+  }
+  .bg-green-950\/10 {
+    background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
     }
   }
   .bg-hero-yellow2 {
@@ -2175,6 +2196,26 @@
     &::after {
       content: var(--tw-content);
       background-color: var(--color-yellow-300);
+    }
+  }
+  .hover\:bg-black\/10 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #000 10%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-green-950\/10 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
+        }
+      }
     }
   }
   .hover\:bg-red-100 {

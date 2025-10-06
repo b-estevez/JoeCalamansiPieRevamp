@@ -19,13 +19,15 @@
     --font-inter: "Inter", sans-serif;
     --font-montserrat: "Montserrat", sans-serif;
     --font-poppins: "Poppins", sans-serif;
-     --color-jcc-light-red: rgba(222, 73, 47, 0.2);
+    --color-jcc-light-red: rgba(222, 73, 47, 0.2);
     --color-jcc-red: #DE492F;
     --color-nav-black: #374151;
     --color-hero-yellow1: #fffada;
     --color-hero-yellow2: #ffde17;
     --color-hero-yellow3: #f9c90b;
     --color-hero-brown: #271911;
+    --color-footer-header: #374151;
+    --color-footer-body: #1F2937;
 
     /* Product section animations */
     --animate-productFirstImageLeftTransition: productFirstImageLeftTransition 0.6s ease forwards;

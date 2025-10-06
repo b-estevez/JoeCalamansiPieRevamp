@@ -20,17 +20,22 @@
         <img src="{{section.settings.header_logo | image_url }}" height="auto" width="150" alt="JCC logo" class="lg:w-50.5">
       </a>
       <ul class="hidden lg:flex flex-col lg:flex-row gap-6 text-[14px] ml-[-60px] mt-21">
-        {% for link in linklists.main-menu.links %}
+        {% comment %}
           {% if link.active %}
             <li class="lg:rounded-sm text-white">
               {% comment %} Revert this version once the pages are complete <a class="bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a> {% endcomment %}
-              <a class="px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+              <a class="bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
             </li>
             {% else %}
             <li class="lg:rounded-sm text-white">
               <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
             </li>
-          {% endif %}
+          {% endif %} {% endcomment %}
+
+        {% for link in linklists.main-menu.links %}
+          <li class="lg:rounded-sm text-white">
+              <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="/">{{ link.title }}</a>
+          </li>
         {% endfor %}
       
       </ul>
@@ -49,30 +54,24 @@
       <label for="my-drawer" aria-label="close sidebar" class="">
         {% render 'icon-close-menu' %}
       </label>
-          {% comment %}
-          Original, revert this version once the pages are complete 
-          {% for link in linklists.main-menu.links %}
+         
+        {% comment %} {% for link in linklists.main-menu.links %}
+         Revert this once all page are complete
             {% if link.active %}
-              <li class="mx-8 lg:rounded-sm text-white/85">
-                <a class="tracking-wide bg-white/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
+              <li class="mx-8 lg:rounded-sm !text-black/85">
+                <a class="tracking-wide !bg-green-950/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
               </li>
               {% else %}
-              <li class="mx-8 lg:rounded-sm text-white/85">
-                <a class="tracking-wide hover:bg-white/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+              <li class="mx-8 lg:rounded-sm !text-black/85">
+                <a class="tracking-wide !hover:bg-green-950/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
               </li>
             {% endif %}
           {% endfor %} {% endcomment %}
 
           {% for link in linklists.main-menu.links %}
-            {% if link.active %}
-              <li class="mx-8 lg:rounded-sm !text-black/85">
-                <a class="tracking-wide !bg-white/10 block px-5 py-2 lg:py-2 rounded-sm">{{ link.title }}</a>
-              </li>
-              {% else %}
-              <li class="mx-8 lg:rounded-sm !text-black/85">
-                <a class="tracking-wide !hover:bg-black/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-            {% endif %}
+            <li class="mx-8 lg:rounded-sm !text-black/85">
+                <a class="tracking-wide hover:bg-green-950/10 px-5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
           {% endfor %}
         
     </ul>

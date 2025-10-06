@@ -110,3 +110,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pass the ID of your success message element
   autoHideToast('subscribe_toast', 2000); // Hide after 6 seconds
 });
+
+
+
+
+// Scroll to section
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Select all elements (including buttons) that have the data-scroll-to attribute
+  const scrollButtons = document.querySelectorAll('[data-scroll-to]');
+  
+  scrollButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      
+      // Prevent any default button action (though often unnecessary for simple buttons)
+      e.preventDefault();
+      
+      // Get the target ID from the data-scroll-to attribute
+      const targetSelector = this.dataset.scrollTo; // Same as this.getAttribute('data-scroll-to')
+      
+      // Find the element on the page
+      const targetElement = document.querySelector(targetSelector);
+      
+      if (targetElement) {
+        // Scroll smoothly to the target element
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start' 
+        });
+      }
+    });
+  });
+});
+
+
+// Hiding header when captcha shows up
+if(document.querySelector('.shopify-challenge__container')){
+    document.querySelector('header').classList.add('hidden');
+}

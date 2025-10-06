@@ -1,9 +1,12 @@
-<div class="footer-wrap bg-hero-yellow2 before:content-['hello'] before:bg-white before:block">
-  <div class="mb-[10vh] mt-[5vh]">
-    <a href="/">
-        <img src="/cdn/shop/files/banner_12.png?v=1754451509" height="auto" width="300" alt="JCC logo" class="my-0 mx-auto">
+{% render 'footer-wave' %}
+<div class="footer-wrap bg-hero-yellow2">
+  <div class="mb-[10vh] w-[80%] y-0 mx-auto">
+    <a class="block mx-auto my-0 w-[300px]" href="{{ routes.root_url }}">
+        <img src="/cdn/shop/files/banner_12.png?v=1754451509" height="auto" width="300" alt="JCC logo">
     </a>
+    
   </div>
+  
   <div class="mb-[50px] lg:pr-[5vh] w-[80%] my-0 mx-auto">
     <ul class="flex flex-col items-center lg:flex-row lg:items-start lg:gap-20">
       {% for link in linklists.footer.links %}
@@ -22,11 +25,26 @@
       {% endfor %}
     </ul>
   </div>
-
+  <div class="grid grid-cols-3 mb-[10vh] w-[70%] y-0 mx-auto">
+    <div class="col-span-2">
+      <p class="text-footer-header font-bold">Follow us!</p>
+      <div class="footer-socials flex gap-3 pt-[10px]">
+        <span>{% render 'icon-social-facebook' %}</span>
+        <span>{% render 'icon-social-instagram' %}</span>
+        <span>{% render 'icon-social-youtube' %}</span>
+        <span>{% render 'icon-social-tiktok' %}</span>
+      </div>
+    </div>
+    <div class="text-footer-body">
+      <p class="text-footer-header font-bold pb-[5px]">Get in Touch</p>
+      <p>Joe's Calamansi Conjection LLC</p>
+      <p>(+63) 928 312 6872</p>
+      <p>ask@calamansipie.com</p>
+    </div>
+  </div>
   <div>
     <p class="text-footer-body/70 text-center text-[11px] font-inter">©2025 Joe's Calamansi Confection LLC. All Rights Reserved</p>
   </div>
-
 </div>
 
 
@@ -51,7 +69,7 @@
       "label": "Footer Logo"
     }
   ],
-  "tag": "footer", 
-  "class": "bg-transparent"
+  "tag": "footer",
+  "class": "bg-white"
 }
 {% endschema %}

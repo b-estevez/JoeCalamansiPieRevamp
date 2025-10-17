@@ -1,12 +1,8 @@
 <!doctype html>
 <html lang="{{ request.locale.iso_code }}">
   <head>
-    {% # Inlined CSS Variables %}
-    {% # Load and preload the critical CSS %}
-    {% comment %} {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }} {% endcomment %}
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
-    {% # Social, title, etc. %}
+    {{ 'custom.css.liquid' | asset_url | stylesheet_tag: preload: true }}
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
@@ -19,6 +15,6 @@
      
 
     {% sections 'footer-group' %}
-    <script defer src="{{ 'custom.js' | asset_url }}"> </script>
+    <script defer src="{{ 'custom.js.liquid' | asset_url }}"> </script>
   </body>
 </html>

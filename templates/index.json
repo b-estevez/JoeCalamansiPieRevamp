@@ -15,11 +15,11 @@
     },
     "product_feature": {
       "type": "index-product",
-      "settings": {
-        "product_image_slider_1": "shopify://shop_images/image-slide-2.jpg",
-        "product_image_slider_2": "shopify://shop_images/image-slide-3.jpg",
-        "product_image_slider_3": "shopify://shop_images/image-slide-1.jpg"
-      }
+      "settings": {}
+    },
+    "fresh-from-tropics": {
+      "type": "index-fresh-from-tropics",
+      "settings": {}
     },
     "testimonial": {
       "type": "index-testimonial",
@@ -28,12 +28,19 @@
     "newsletter": {
       "type": "index-newsletter",
       "settings": {}
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "disabled": true,
+      "settings": {}
     }
   },
   "order": [
     "hero",
     "product_feature",
+    "fresh-from-tropics",
     "testimonial",
-    "newsletter"
+    "newsletter",
+    "pagefly-home"
   ]
 }

@@ -59,9 +59,6 @@
     --color-hero-brown: #271911;
     --color-footer-header: #374151;
     --color-footer-body: #1F2937;
-    --color-product-price: #4B5563;
-    --color-cart-th: #6B7280;
-    --color-calamansi-green: #13AC18;
     --animate-productFirstImageLeftTransition: productFirstImageLeftTransition 0.6s ease forwards;
     --animate-productSecondImageTransition: productSecondImageTransition 0.6s ease forwards;
     --animate-productFirstImageRightTransition: productFirstImageRightTransition 0.6s ease forwards;
@@ -1440,9 +1437,6 @@
   .top-0\.5 {
     top: calc(var(--spacing) * 0.5);
   }
-  .top-\[-10px\] {
-    top: -10px;
-  }
   .top-\[0\] {
     top: 0;
   }
@@ -1463,12 +1457,6 @@
   }
   .right-2 {
     right: calc(var(--spacing) * 2);
-  }
-  .right-\[-10px\] {
-    right: -10px;
-  }
-  .right-\[-20px\] {
-    right: -20px;
   }
   .right-\[5vw\] {
     right: 5vw;
@@ -1791,9 +1779,9 @@
   .inline-block {
     display: inline-block;
   }
-  .size-1 {
-    width: calc(var(--spacing) * 1);
-    height: calc(var(--spacing) * 1);
+  .size-3 {
+    width: calc(var(--spacing) * 3);
+    height: calc(var(--spacing) * 3);
   }
   .size-5 {
     width: calc(var(--spacing) * 5);
@@ -1818,15 +1806,6 @@
   }
   .h-90 {
     height: calc(var(--spacing) * 90);
-  }
-  .h-\[20px\] {
-    height: 20px;
-  }
-  .h-\[25px\] {
-    height: 25px;
-  }
-  .h-\[30px\] {
-    height: 30px;
   }
   .h-\[40px\] {
     height: 40px;
@@ -1860,15 +1839,6 @@
   }
   .w-110 {
     width: calc(var(--spacing) * 110);
-  }
-  .w-\[20px\] {
-    width: 20px;
-  }
-  .w-\[25px\] {
-    width: 25px;
-  }
-  .w-\[30px\] {
-    width: 30px;
   }
   .w-\[40px\] {
     width: 40px;
@@ -2120,34 +2090,22 @@
       border-bottom-color: color-mix(in oklab, var(--color-black) 10%, transparent);
     }
   }
-  .\!bg-green-950\/10 {
-    background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent) !important;
+  .\!bg-white\/10 {
+    background-color: color-mix(in srgb, #fff 10%, transparent) !important;
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent) !important;
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent) !important;
     }
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-black\/10 {
     background-color: color-mix(in srgb, #000 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
-    }
-  }
-  .bg-calamansi-green {
-    background-color: var(--color-calamansi-green);
-  }
-  .bg-cart-th {
-    background-color: var(--color-cart-th);
-  }
-  .bg-green-950 {
-    background-color: var(--color-green-950);
-  }
-  .bg-green-950\/10 {
-    background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
     }
   }
   .bg-hero-yellow2 {
@@ -2169,8 +2127,8 @@
     --tw-gradient-position: to right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(0\,0\,0\,0\.3\)\)\] {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3));
+  .bg-\[linear-gradient\(to_right\,rgba\(0\,0\,0\,0\.8\)\,rgba\(0\,0\,0\,0\)\)\] {
+    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0));
   }
   .from-\[\#1e2026\] {
     --tw-gradient-from: #1e2026;
@@ -2307,12 +2265,6 @@
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
-  }
-  .pb-\[2px\] {
-    padding-bottom: 2px;
-  }
   .pb-\[4px\] {
     padding-bottom: 4px;
   }
@@ -2354,9 +2306,6 @@
   }
   .text-right {
     text-align: right;
-  }
-  .align-middle {
-    vertical-align: middle;
   }
   .font-inter {
     font-family: var(--font-inter);
@@ -2448,12 +2397,6 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-calamansi-green {
-    color: var(--color-calamansi-green);
-  }
-  .text-cart-th {
-    color: var(--color-cart-th);
-  }
   .text-footer-body {
     color: var(--color-footer-body);
   }
@@ -2481,9 +2424,6 @@
   .text-nav-black {
     color: var(--color-nav-black);
   }
-  .text-product-price {
-    color: var(--color-product-price);
-  }
   .text-white {
     color: var(--color-white);
   }
@@ -2491,6 +2431,12 @@
     color: color-mix(in srgb, #fff 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+  .text-white\/85 {
+    color: color-mix(in srgb, #fff 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 85%, transparent);
     }
   }
   .text-yellow-300 {
@@ -2559,64 +2505,10 @@
       top: calc(var(--spacing) * 3);
     }
   }
-  .before\:top-\[-10px\] {
-    &::before {
-      content: var(--tw-content);
-      top: -10px;
-    }
-  }
-  .before\:top-\[5px\] {
-    &::before {
-      content: var(--tw-content);
-      top: 5px;
-    }
-  }
-  .before\:top-\[10px\] {
-    &::before {
-      content: var(--tw-content);
-      top: 10px;
-    }
-  }
-  .before\:right-\[-5px\] {
-    &::before {
-      content: var(--tw-content);
-      right: -5px;
-    }
-  }
-  .before\:right-\[-10px\] {
-    &::before {
-      content: var(--tw-content);
-      right: -10px;
-    }
-  }
-  .before\:right-\[0px\] {
-    &::before {
-      content: var(--tw-content);
-      right: 0px;
-    }
-  }
-  .before\:right-\[5px\] {
-    &::before {
-      content: var(--tw-content);
-      right: 5px;
-    }
-  }
-  .before\:right-\[10px\] {
-    &::before {
-      content: var(--tw-content);
-      right: 10px;
-    }
-  }
   .before\:left-\[-65px\] {
     &::before {
       content: var(--tw-content);
       left: -65px;
-    }
-  }
-  .before\:left-\[10px\] {
-    &::before {
-      content: var(--tw-content);
-      left: 10px;
     }
   }
   .before\:block {
@@ -2631,120 +2523,16 @@
       height: calc(var(--spacing) * 0.5);
     }
   }
-  .before\:h-\[10px\] {
-    &::before {
-      content: var(--tw-content);
-      height: 10px;
-    }
-  }
-  .before\:h-\[15px\] {
-    &::before {
-      content: var(--tw-content);
-      height: 15px;
-    }
-  }
-  .before\:h-\[20px\] {
-    &::before {
-      content: var(--tw-content);
-      height: 20px;
-    }
-  }
   .before\:w-15 {
     &::before {
       content: var(--tw-content);
       width: calc(var(--spacing) * 15);
     }
   }
-  .before\:w-\[10px\] {
-    &::before {
-      content: var(--tw-content);
-      width: 10px;
-    }
-  }
-  .before\:w-\[15px\] {
-    &::before {
-      content: var(--tw-content);
-      width: 15px;
-    }
-  }
-  .before\:w-\[20px\] {
-    &::before {
-      content: var(--tw-content);
-      width: 20px;
-    }
-  }
-  .before\:rounded-full {
-    &::before {
-      content: var(--tw-content);
-      border-radius: calc(infinity * 1px);
-    }
-  }
-  .before\:bg-black {
-    &::before {
-      content: var(--tw-content);
-      background-color: var(--color-black);
-    }
-  }
-  .before\:bg-calamansi-green {
-    &::before {
-      content: var(--tw-content);
-      background-color: var(--color-calamansi-green);
-    }
-  }
   .before\:bg-yellow-300 {
     &::before {
       content: var(--tw-content);
       background-color: var(--color-yellow-300);
-    }
-  }
-  .before\:text-black {
-    &::before {
-      content: var(--tw-content);
-      color: var(--color-black);
-    }
-  }
-  .before\:text-white {
-    &::before {
-      content: var(--tw-content);
-      color: var(--color-white);
-    }
-  }
-  .before\:before\:content-\[\'\'\] {
-    &::before {
-      content: var(--tw-content);
-      &::before {
-        content: var(--tw-content);
-        --tw-content: '';
-        content: var(--tw-content);
-      }
-    }
-  }
-  .before\:content-\[\'\'\] {
-    &::before {
-      content: var(--tw-content);
-      --tw-content: '';
-      content: var(--tw-content);
-    }
-  }
-  .before\:content-\[\'1\'\] {
-    &::before {
-      content: var(--tw-content);
-      --tw-content: '1';
-      content: var(--tw-content);
-    }
-  }
-  .before\:content-\[\'New\'\] {
-    &::before {
-      content: var(--tw-content);
-      --tw-content: 'New';
-      content: var(--tw-content);
-    }
-  }
-  .before\:content-\[\'hello\'\] {
-    &::before {
-      content: var(--tw-content);
-      --tw-content: 'hello';
-      content: var(--tw-content);
     }
   }
   .after\:absolute {
@@ -2787,16 +2575,6 @@
     &::after {
       content: var(--tw-content);
       background-color: var(--color-yellow-300);
-    }
-  }
-  .hover\:bg-green-950\/10 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(26.6% 0.065 152.934) 10%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-green-950) 10%, transparent);
-        }
-      }
     }
   }
   .hover\:bg-red-100 {
@@ -2862,11 +2640,6 @@
       }
     }
   }
-  .sm\:visible {
-    @media (width >= 40rem) {
-      visibility: visible;
-    }
-  }
   .sm\:size-5 {
     @media (width >= 40rem) {
       width: calc(var(--spacing) * 5);
@@ -2906,6 +2679,12 @@
   .sm\:px-10 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 10);
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
   .sm\:before\:left-\[-114px\] {
@@ -3040,9 +2819,9 @@
       width: 360px;
     }
   }
-  .lg\:max-w-190 {
+  .lg\:max-w-160 {
     @media (width >= 64rem) {
-      max-width: calc(var(--spacing) * 190);
+      max-width: calc(var(--spacing) * 160);
     }
   }
   .lg\:translate-x-30 {
@@ -3197,12 +2976,6 @@
   .xl\:bg-size-\[100dvw_64dvw\] {
     @media (width >= 80rem) {
       background-size: 100dvw 64dvw;
-    }
-  }
-  .xl\:text-lg {
-    @media (width >= 80rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
 }

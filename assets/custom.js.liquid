@@ -1,6 +1,8 @@
-// Nav scroll
+// global variables
 const headerTag = document.querySelector('header');
+const isHeroSectionExist = document.querySelector(`div[id*=__hero]`);
 
+// Nav scroll
 // Get the offset position of the navbar
 var sticky = headerTag.offsetTop;
 window.onscroll = function() {
@@ -8,6 +10,7 @@ window.onscroll = function() {
 }
 
 function changeNav(){
+  if(isHeroSectionExist)
     if (window.pageYOffset > sticky) {
         headerTag.classList.add("bg-white","text-green-950");
         // Text
@@ -33,6 +36,23 @@ function changeNav(){
 }
 
 // End of Nav scroll
+
+// Nav changes to default color when Hero section do not exist.
+if(!isHeroSectionExist){
+  // Remove animations
+  headerTag.classList.remove("transition", "delay-150", "duration-300", "ease-in-out");
+  document.querySelector('#jcc_logo')?.classList.remove("transition", "duration-200", "ease-in-out");
+
+  headerTag.classList.add("bg-white","text-green-950");
+  // Text
+  document.querySelectorAll('header .text-white')?.forEach((e) => e.classList.replace('text-white','text-green-950'));  
+  // Active background  
+  document.querySelectorAll('header .bg-white\\/10')?.forEach((e) => e.classList.replace('bg-white/10','bg-green-950/10'));
+  // Hover
+  document.querySelectorAll('header .hover\\:bg-white\\/10')?.forEach((e) => e.classList.replace('hover:bg-white/10','hover:bg-green-950/10'));
+  // Logo
+        document.querySelector('#jcc_logo')?.classList.remove('invisible');
+}
 
 
 // product page functions
@@ -83,8 +103,11 @@ function swapImage(e){
     first_image.style.backgroundImage = clickedImage;
 }
 
-second_image.addEventListener('click', transition);
-third_image.addEventListener('click', transition);
+if(second_image || third_image){
+  second_image.addEventListener('click', transition);
+  third_image.addEventListener('click', transition);
+}
+
 // third_image.onclick = transition;
 
 // end of product page functions

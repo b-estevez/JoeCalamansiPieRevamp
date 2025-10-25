@@ -5,43 +5,185 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
 
-<h1>{{ collection.title }}</h1>
+<script src="{{ 'collection-filters.js' | asset_url }}" defer></script>
+<script src="{{ 'collection-sort.js' | asset_url }}" defer></script>
+<script src="{{ 'collection-products.js' | asset_url }}" defer></script>
 
-<div class="collection-products">
-  {% paginate collection.products by 20 %}
-    {% for product in collection.products %}
-      <div class="collection-product">
-        {% if product.featured_image %}
-          {% render 'image',
-            class: 'collection-product__image',
-            image: product.featured_image,
-            url: product.url,
-            width: 400,
-            height: 400,
-            crop: 'center'
-          %}
-        {% endif %}
-        <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
-          <p>{{ product.price | money }}</p>
-        </div>
+
+<div class="w-[80%] mx-auto pt-[40vh] pb-[160px] text-black">
+  <div class="mb-[64px]">
+    <h1 class="font-poppins font-bold text-hero-brown text-[32px] text-center pb-[4px]">Calamansi Pie Collection</h1>
+    <p class="text-[20px] text-montserrat text-center">Handcrated with real Philippines calamansi, our pies blend citrus zest with creamy perfection.</p>
+  </div>
+
+  <div class="collection-main pt-[80px] text-[16px]">
+    <div class="collection-filters flex justify-between pb-[64px]">
+      <collection-filter class="filters-left" data-section-id={{ section.id }}>
+        <span>Filter:</span>
+        {% for filter in collection.filters %}
+          {% if filter.label == 'Availability' %}
+            <button class="bg-white px-[20px] py-[4px] cursor-pointer" popovertarget="popover-1" style="anchor-name:--anchor-1">
+              <span class="pr-[5px]">Availability</span>
+              {% render 'icon-caret-down' %}
+            </button>
+
+            <div class="availability-popover bg-white dropdown menu w-52 rounded-box bg-base-100 shadow-sm p-0 lg:w-[300px]" popover id="popover-1" style="position-anchor:--anchor-1">
+              <div class="flex flex-row justify-between block border-b-1 border-b-black/10 py-[16px] px-[16px]">
+                <span class="info-availability">Showing {{ collection.products_count }} items</span>
+                <span class="reset-availability cursor-pointer">Reset</span>
+              </div>
+              <ul class="availability-options p-[16px]">
+                {% for value in filter.values %}
+                  <li class="flex flex-row items-center">
+                    <input 
+                      type="checkbox" 
+                      id="{{ filter.label | handle }}-{{ value.value | handle }}"
+                      name="{{ filter.label | handle }}"
+                      value="{{ value.value | handle }}"
+                      data-add-url="{{ value.url_to_add }}"
+                      data-remove-url="{{ value.url_to_remove }}"
+                      data-param="{{ value.param_name }}"
+                      {% if value.active %}
+                        checked
+                      {% endif %}
+                      class="checkbox checkbox-xs inline bg-white text-black border-black/10 rounded-xs" 
+                     />
+                    <span>{{ value.label}} </span>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if filter.label == 'Price' %}
+            <button class="bg-white px-[20px] py-[4px] cursor-pointer" popovertarget="popover-2" style="anchor-name:--anchor-2">
+              <span class="pr-[5px]">Price</span>
+              {% render 'icon-caret-down' %}
+            </button>
+            <div class="price-popover bg-white dropdown menu w-52 rounded-box bg-base-100 shadow-sm p-0 lg:w-[360px]" popover id="popover-2" style="position-anchor:--anchor-2">
+              <div class="flex flex-row justify-between block border-b-1 border-b-black/10 py-[16px] px-[16px]">
+                <span class="info-price">Highest Price is {{ filter.max_value.value | default: filter.range_max | divided_by: 100}}</span>
+                <span 
+                  class="reset-price cursor-pointer"
+                  data-reset-min = "0"
+                  data-reset-max = "{{ filter.range_max | divided_by: 100 }}"
+                >Reset</span>
+              </div>
+              <div class="flex flex-row justify-between block border-b-1 border-b-black/10 py-[16px] px-[16px]">
+                <span class="flex flex-row items-center gap-1">
+                  P
+                  <input 
+                      type="text" 
+                      placeholder="Min"
+                      id="{{ filter.label | handle }}-min"
+                      name="{{ filter.label | handle }}"
+                      class="input bg-white border-black/10"
+                      {% if filter.min_value.value %}
+                        value="{{ filter.min_value.value | divided_by: 100 }}"
+                      {% else %}
+                        value="0"    
+                      {% endif %}
+                      data-param={{ filter.min_value.param_name }}
+                     />
+                  -<input 
+                      type="text" 
+                      placeholder="Max"
+                      id="{{ filter.label | handle }}-max"
+                      name="{{ filter.label | handle }}"
+                      class="input bg-white border-black/10"
+                      {% if filter.max_value.value %}
+                        value="{{ filter.max_value.value | divided_by: 100 }}"
+                      {% else %}
+                        value="{{ filter.range_max | divided_by: 100 }}"    
+                      {% endif %}
+                      data-param={{ filter.max_value.param_name }}
+                     />
+                </span>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </collection-filter>
+      <div class="filters-right">
+        <collection-sort data-section-id={{ section.id }}>
+          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+          <span>Sort by:</span>  
+          <button class="bg-white px-[20px] py-[4px] cursor-pointer" popovertarget="popover-3" style="anchor-name:--anchor-3">
+            <span class="sort-selected pr-[5px]">
+              {% for option in collection.sort_options %}
+                {% if option.value == sort_by %}
+                  {{ option.name }}
+                {% endif %}
+              {% endfor %}
+            </span>
+            {% render 'icon-caret-down' %}
+          </button>
+          <div class="bg-white dropdown menu w-52 rounded-box bg-base-100 shadow-sm p-0 lg:w-[360px]" popover id="popover-3" style="position-anchor:--anchor-3">
+            <div class="flex flex-row justify-between block border-b-1 border-b-black/10 py-[16px] px-[16px]">
+              <ul class="sort-options">
+                {% for option in collection.sort_options %}
+                  <li 
+                    class="px-[12px] py-[8px] cursor-pointer" 
+                    data-sort-value={{ option.value }}>
+                    {{ option.name }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </collection-sort>
       </div>
-    {% endfor %}
+      
+    </div>
+    <div class="collection-products flex text-black gap-10">
+    {% paginate collection.products by 20 %}
+      {% for product in collection.products %}
+        <div class="collection-product w-[260px]">
+          <div>
+            {% render 'image', 
+            image: product.featured_image,
+            width: 260,
+            height: 300,
+            url: product.url,
+            crop: 'center',
+            class: 'rounded-lg'
+            %}
+          </div>
+          <div class="collection-product__content pt-[10px] text-center pb-[16px]">
+            <p class="font-medium font-poppins pb-[4px]">{{ product.title | escape | link_to: product.url }}</p>
+            <p class="font-montserrat text-[14px] text-product-price">{{ product.price | money }}</p>
+          </div>
+          <collection-product data-header-target=".cart-count">
+            <form class="collection-add-cart">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              {% if product.available %}
+                <button type="submit" class="flex flex-row items-center justify-center gap-3 bg-hero-yellow2 w-full rounded-full px-[24px] py-[12px] font-medium text-[16px] cursor-pointer">
+                  {% render 'icon-cart' %}
+                  Add to Cart
+                </button>
+              {% else %}
+                <button type="submit" class="flex flex-row items-center justify-center gap-3 bg-black/10 w-full rounded-full px-[24px] py-[12px] font-medium text-[16px]" disabled>
+                  Out of Stock
+                </button>
+              {% endif %}
+              
+            </form>   
+          </collection-product>
+        </div>
+      {% endfor %}
 
-    {{ paginate | default_pagination }}
-  {% endpaginate %}
+      {{ paginate | default_pagination }}
+    {% endpaginate %}
+    </div>
+  </div>
+  
 </div>
 
-{% stylesheet %}
-  .collection-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  }
-{% endstylesheet %}
 
 {% schema %}
 {
   "name": "t:general.collection",
-  "settings": []
+  "settings": [],
+  "tag": "div",
 }
 {% endschema %}

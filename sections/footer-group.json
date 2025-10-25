@@ -15,7 +15,8 @@
       "type": "footer",
       "settings": {
         "menu": "",
-        "show_payment_icons": true
+        "show_payment_icons": true,
+        "footer_logo": "shopify://shop_images/banner_13_82855cb9-7604-41a9-9b6d-96a18216c7ad.png"
       }
     }
   },

@@ -17,10 +17,6 @@
       "type": "index-product",
       "settings": {}
     },
-    "fresh-from-tropics": {
-      "type": "index-fresh-from-tropics",
-      "settings": {}
-    },
     "testimonial": {
       "type": "index-testimonial",
       "settings": {}
@@ -38,7 +34,6 @@
   "order": [
     "hero",
     "product_feature",
-    "fresh-from-tropics",
     "testimonial",
     "newsletter",
     "pagefly-home"

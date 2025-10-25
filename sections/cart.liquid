@@ -5,29 +5,96 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/cart
 {% endcomment %}
 
-<h1>{{ 'cart.title' | t }}</h1>
+<script src="{{ 'cart.js' | asset_url }}" defer></script>
 
-<form action="{{ routes.cart_url }}" method="post">
-  <table>
-    {% for item in cart.items %}
-      <tr>
-        <td>
-          {% render 'image', image: item.image, url: item.url %}
-        </td>
-        <td>
-          <p>{{ item.product.title }}</p>
-          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </td>
-        <td>
-          <input type="text" name="updates[]" value="{{ item.quantity }}">
-          <input type="submit" value="{{ 'cart.update' | t }}">
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
+<div class="cart w-[80%] mx-auto pt-[30vh] pb-[160px] text-black">
+  <div class="cart-heading pb-[80px]">
+    <h1 class="font-poppins font-bold text-hero-brown text-[32px] pb-[4px]">Your Cart</h1>
+    <p class="text-[20px] text-montserrat">Your delicious picks are waiting. Check your order before you proceed.</p>
+  </div>
 
-  <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
-</form>
+  <div class="cart-main">
+    {% if cart.empty? %}
+    <ul class="list bg-white">
+      <li class="list-row rounded-none grid-cols-3 font-montserrat text-cart-th text-[14px] p-0 pb-[16px] border-b-[1px] border-b-black/10">
+        <div>PRODUCT</div>
+        <div>QUANTITY</div>
+        <div class="justify-self-end">TOTAL</div>
+      </li>
+      <li>
+        <div class="text-cart-th text-center py-10"> 
+          <p class="font-poppins text-[24px] pb-2">Your cart is Empty.</p> 
+          <p>
+            Add more zesty calamansi goodness
+            <a class="text-calamansi-green font-medium" href="collections/all">here</a>. 
+          </p>
+        </div>
+      </li>
+    </ul>
+    {% else %}
+    <ul class="list bg-white">
+      <li class="list-row rounded-none grid-cols-3 font-montserrat text-cart-th text-[14px] p-0 pb-[16px] border-b-[1px] border-b-black/10">
+        <div>PRODUCT</div>
+        <div>QUANTITY</div>
+        <div class="justify-self-end">TOTAL</div>
+      </li>      
+      {% for item in cart.items %}
+      <cart-item 
+        data-section-id={{ section.id }} 
+        data-item-key={{ item.key }}
+        data-header-target=".cart-count"
+        class="list-row grid-cols-3 px-0 py-[10px] border-b-[1px] border-b-black/10 text-nav-black">
+        <div class="flex flex-row gap-5">
+          <div class="w-[100px] h-[100px] rounded-lg">
+            {% render 'image',
+            image: item.image,
+            width: 100,
+            height: 100,
+            crop: 'center',
+            class: 'rounded-lg'
+            %}
+            </div>
+          <div class="flex flex-col justify-center gap-[4px]">
+            <p>{{ item.variant.title }}</p>
+            <p class="font-medium text-[16px]">{{ item.title }}</p>
+            <p>{{ item.variant.price | money}}</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-5 items-center">
+          <div class="flex flex-row items-center">
+            <button data-type="decrement" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-l-1 rounded-l-sm border-black/20 cursor-pointer">–</button>
+            <input 
+              class="w-[40px] h-[40px] text-center border-y-1 border-black/20"
+              type="text" 
+              value="{{ item.quantity }}"
+            >
+            <button data-type="increment" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-r-1 rounded-r-sm border-black/20 cursor-pointer">+</button>
+          </div>
+          <div>
+            <button data-type="remove-item" data-line="{{ item }}"class="quantity cursor-pointer">
+              {% render 'icon-trash' %}
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-row justify-end items-center">
+          <span class="line-price">{{ item.original_line_price | money }}</span>
+        </div>
+      </cart-item>
+      {% endfor %}  
+    </ul>
+
+    <div class="flex flex-row justify-end pt-[50px] ">
+      <div class="text-right">
+        <p class="cart-subtotal font-medium text-[20px] text-nav-black">Subtotal: {{ cart.items_subtotal_price | money }}</p>
+        <p class="text-[14px] text-cart-th pt-[4px] pb-[24px]">Taxes, discounts and shipping calculated at checkout.</p>
+        <form action="/checkout" method="post">
+          <button class="w-[45vh] pl-[24px] pr-[20px] py-[12px] rounded-full bg-hero-yellow2 font-medium text-[16px] cursor-pointer">Checkout</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
 
 {% schema %}
 {

@@ -28,6 +28,9 @@
     --color-hero-brown: #271911;
     --color-footer-header: #374151;
     --color-footer-body: #1F2937;
+    --color-product-price: #4B5563;
+    --color-cart-th: #6B7280;
+    --color-calamansi-green: #13AC18;
 
     /* Product section animations */
     --animate-productFirstImageLeftTransition: productFirstImageLeftTransition 0.6s ease forwards;

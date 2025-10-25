@@ -2,7 +2,7 @@
 <html lang="{{ request.locale.iso_code }}">
   <head>
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'custom.css.liquid' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
@@ -13,8 +13,7 @@
 
     {{ content_for_layout }}
      
-
     {% sections 'footer-group' %}
-    <script defer src="{{ 'custom.js.liquid' | asset_url }}"> </script>
-  </body>
+    <script defer src="{{ 'custom.js' | asset_url }}"> </script>
+</body>
 </html>

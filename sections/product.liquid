@@ -5,7 +5,7 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/product
 {% endcomment %}
 
-<div class="product-images">
+{% comment %} <div class="product-images">
   {% for image in product.images %}
     {% render 'image', class: 'product-image', image: image %}
   {% endfor %}
@@ -38,8 +38,13 @@
 
     <input type="submit" value="Add to cart">
     {{ form | payment_button }}
-  {% endform %}
-</div>
+  {% endform %} {% endcomment %}
+
+  {% for collection in collections['featured-products'].products %}
+    <div class="pt-[40vh] text-black">{{ collection.title }}</div>
+    {{- collection.title | link_to: collection.url }}
+  {% endfor %}
+{% comment %} </div> {% endcomment %}
 
 {% schema %}
 {

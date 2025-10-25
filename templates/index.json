@@ -25,17 +25,12 @@
       "type": "index-newsletter",
       "settings": {}
     },
-    "pagefly-home": {
-      "type": "pagefly-home",
-      "disabled": true,
-      "settings": {}
-    }
+
   },
   "order": [
     "hero",
     "product_feature",
     "testimonial",
-    "newsletter",
-    "pagefly-home"
+    "newsletter"  
   ]
 }

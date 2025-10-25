@@ -1,4 +1,5 @@
-
+<script src="{{ 'header-cart.js' | asset_url }}" defer></script>
+  
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex justify-evenly items-center lg:items-center gap-1 lg:justify-around py-2">
     <div class="hidden lg:flex lg:gap-2 text-white">
@@ -43,8 +44,24 @@
 
     <ul id="shopify-icons" class="flex mr-5 lg:mr-0 lg:flex-row gap-1 lg:gap-5 text-white/70">
       {% comment %} <a href="#"><li class="p-2 rounded-sm hover:bg-red-100 hover:text-jcc-red">{% render 'icon-search' %}</li></a> {% endcomment %}
-      <a href="#"><li class="p-2 rounded-sm text-white hover:bg-white/10">{% render 'icon-user' %}</li></a>
-      <a href="#"><li class="p-2 rounded-sm text-white hover:bg-white/10">{% render 'icon-shopping-bag' %}</li></a>
+      <a href="#">
+        <li class="p-2 rounded-sm text-white hover:bg-white/10">{% render 'icon-user' %}</li>
+      </a>
+      <a href="{{ routes.cart_url }}">
+        <header-cart data-section-id="{{ section.id }}">
+          <li class="relative p-2 rounded-sm text-white hover:bg-white/10">
+            <div class="cart-count absolute bg-calamansi-green rounded-full w-[25px] h-[25px] text-center right-[-10px] top-[-10px] font-poppins">
+              {% if cart.item_count < 100 %}  
+                {{ cart.item_count }}
+              {% else %}
+                99+
+              {% endif %}
+            </div>
+            {% render 'icon-shopping-bag' %}
+          </li>
+        </header-cart>
+        
+      </a>
     </ul>
   </div>
 

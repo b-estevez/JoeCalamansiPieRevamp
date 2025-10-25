@@ -12,9 +12,14 @@
     "main": {
       "type": "collection",
       "settings": {}
+    },
+    "newsletter": {
+      "type": "index-newsletter",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "newsletter"
   ]
 }

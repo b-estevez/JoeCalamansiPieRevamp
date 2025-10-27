@@ -8,13 +8,19 @@
  * ------------------------------------------------------------
  */
 {
+  
   "sections": {
     "main": {
       "type": "product",
       "settings": {}
+    },
+    "newsletter": {
+      "type": "index-newsletter",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "newsletter"
   ]
 }

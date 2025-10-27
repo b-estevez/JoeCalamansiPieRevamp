@@ -1,57 +1,99 @@
-{% comment %}
-  This section is used in the product template to render product page with
-  media, content, and add-to-cart form.
+<script src="{{ 'product.js' | asset_url }}" defer></script>
 
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/product
-{% endcomment %}
+<div class="flex gap-25 justify-center">
+  <div class="flex flex-col items-start gap-3 w-[459px]">
+      <div>
+          <img height="" width="" class="w-[459px] h-[447px] rounded-lg object-cover" src="{{ product.featured_image | image_url: width: 1000   }}" alt="">
+      </div>
+      <div class="flex gap-3">
+        {%- for thisProductMedia in product.media -%}
+          {%- unless thisProductMedia == product.featured_image -%}
+            <div class="cursor-pointer">
+              <img height="" width="" class="w-[144px] h-[124px] rounded-lg object-cover" src="{{ thisProductMedia | image_url }}" alt="">
+            </div>  
+          {%- endunless -%}
+          
+        {%- endfor -%}
+      </div>
+  </div>
+  
+  <div class="flex flex-col gap-6 w-[40%]">
+    <div class="flex flex-col gap-2">
+      <p class="text-sm">Freshly Baked Calamansi Pie</p>
+      <h1 class="text-4xl font-semibold font-poppins">{{product.title}}</h1>
+      <p class="text-2xl font-medium"> {{product.price | money_with_currency}}</p>
+    </div>
 
-{% comment %} <div class="product-images">
-  {% for image in product.images %}
-    {% render 'image', class: 'product-image', image: image %}
-  {% endfor %}
+    <div class="flex flex-col gap-5">
+      <div class="text-lg">
+        {{ product.content }}
+      </div>
+      
+      <p class="text-lg">
+        {% for option in product.options -%}
+             {{ option }}
+          {%- endfor %}
+
+        {% for variant in product.variants %}
+          {{ variant.title }}
+        {% endfor %}
+      </p>
+    </div>
+
+    <product-item 
+      data-section-id={{ section.id }}
+      data-header-target=".cart-count"
+      class="flex flex-col gap-10">
+      <div class="flex gap-10">
+        <div>
+          <label>Quantity</label>
+            <div>
+              <div class="flex flex-row gap-5 items-center">
+                <div class="flex flex-row items-center">
+                  <button data-type="decrement" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-l-1 rounded-l-sm border-black/20 cursor-pointer">–</button>
+                  <input 
+                    class="w-[40px] h-[40px] text-center border-y-1 border-black/20"
+                    type="text" 
+                    value="1"
+                    id="quantityInput"
+                  >
+                  <button data-type="increment" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-r-1 rounded-r-sm border-black/20 cursor-pointer">+</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+          <label for="">Stock</label>
+          {%- for variant in product.variants -%}
+            <p>{{ variant.inventory_quantity   }}</p>
+          {%- endfor -%}
+        </div>
+        
+      </div>
+
+      <form class="product-add-cart">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        {% if product.available %}
+          <button id="product-add-to-cart-btn" type="submit" class="flex flex-row items-center justify-center gap-3 bg-hero-yellow2 w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px] cursor-pointer">
+            {% render 'icon-cart' %}
+            Add to Cart
+          </button>
+        {% else %}
+          <button type="submit" class="flex flex-row items-center justify-center gap-3 bg-black/10 w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px]" disabled>
+            Out of Stock
+          </button>
+        {% endif %}
+      </form>
+    </product-item>
+
+  </div>
 </div>
 
-<div class="product-info">
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.price | money }}</p>
-  <p>{{ product.description }}</p>
-</div>
-
-<div class="product-form">
-  {% form 'product', product %}
-    {% assign current_variant = product.selected_or_first_available_variant %}
-
-    <select name="id">
-      {% for variant in product.variants %}
-        <option
-          value="{{ variant.id }}"
-          {% if variant == current_variant %}
-            selected="selected"
-          {% endif %}
-        >
-          {{ variant.title }} - {{ variant.price | money }}
-        </option>
-      {% endfor %}
-    </select>
-
-    <input type="text" name="quantity" min="1" value="1">
-
-    <input type="submit" value="Add to cart">
-    {{ form | payment_button }}
-  {% endform %} {% endcomment %}
-
-  {% for collection in collections['featured-products'].products %}
-    <div class="pt-[40vh] text-black">{{ collection.title }}</div>
-    {{- collection.title | link_to: collection.url }}
-  {% endfor %}
-{% comment %} </div> {% endcomment %}
 
 {% schema %}
 {
-  "name": "t:general.product",
+  "name": "product",
   "settings": [],
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  }
+  "class": "mt-20 lg:px-40 pt-40 mx-10 text-green-950",
 }
 {% endschema %}

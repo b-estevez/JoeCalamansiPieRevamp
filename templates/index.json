@@ -13,6 +13,10 @@
       "type": "index-hero",
       "settings": {}
     },
+    "fresh-from-tropics": {
+      "type": "index-fresh-from-tropics",
+      "settings": {}
+    },
     "product_feature": {
       "type": "index-product",
       "settings": {}
@@ -29,6 +33,7 @@
   },
   "order": [
     "hero",
+    "fresh-from-tropics",
     "product_feature",
     "testimonial",
     "newsletter"  

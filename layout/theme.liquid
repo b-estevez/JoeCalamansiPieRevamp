@@ -3,6 +3,7 @@
   <head>
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    <link rel="icon" type="image/x-icon" href="{{ 'Joe_Caricature_1.png' | file_img_url }}">
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
@@ -15,5 +16,5 @@
      
     {% sections 'footer-group' %}
     <script defer src="{{ 'custom.js' | asset_url }}"> </script>
-</body>
+  </body>
 </html>

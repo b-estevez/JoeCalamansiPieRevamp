@@ -35,7 +35,13 @@
 
         {% for link in linklists.main-menu.links %}
           <li class="lg:rounded-sm text-white">
-              <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="/">{{ link.title }}</a>
+              {%- if link.title == "Shop" -%}
+                
+                <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
+                {%- else -%}
+                  <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="/">{{ link.title }}</a>
+                  
+              {%- endif -%}
           </li>
         {% endfor %}
       

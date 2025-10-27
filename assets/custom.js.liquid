@@ -12,7 +12,7 @@ window.onscroll = function() {
 function changeNav(){
   if(isHeroSectionExist)
     if (window.pageYOffset > sticky) {
-        headerTag.classList.add("bg-white","text-green-950");
+        headerTag.classList.add("bg-white","text-green-950","shadow-header");
         // Text
         document.querySelectorAll('header .text-white')?.forEach((e) => e.classList.replace('text-white','text-green-950'));  
         // Active background  
@@ -22,7 +22,7 @@ function changeNav(){
         // Logo
         document.querySelector('#jcc_logo')?.classList.remove('invisible');
     } else {
-        headerTag.classList.remove("bg-white","text-green-950");
+        headerTag.classList.remove("bg-white","text-green-950",".shadow-header");
         // Text
         document.querySelectorAll('header .text-green-950')?.forEach((e) => e.classList.replace('text-green-950','text-white'));
         // Active background
@@ -41,6 +41,7 @@ function changeNav(){
 if(!isHeroSectionExist){
   // Remove animations
   headerTag.classList.remove("transition", "delay-150", "duration-300", "ease-in-out");
+  headerTag.classList.add("shadow-header");
   document.querySelector('#jcc_logo')?.classList.remove("transition", "duration-200", "ease-in-out");
 
   headerTag.classList.add("bg-white","text-green-950");

@@ -74,3 +74,27 @@ class ProductItem extends HTMLElement {
 }
 
 customElements.define("product-item", ProductItem)
+
+
+
+// Product Image Controls
+
+const largeImage = document.querySelector(`.large-product-image`);
+const productImageContainer = document.querySelector(`#product-images`);
+
+
+function swapImage(event){
+  if(event.target.classList.contains("mini-product-image")){
+
+    if(largeImage.src != event.target.src)
+
+      largeImage.style.opacity = 0;
+      setTimeout(() => {
+        largeImage.src = event.target.src;
+      }, 350);
+    // largeImage.style.opacity = 1; 
+  }
+}
+
+productImageContainer.addEventListener('click',swapImage);
+largeImage.addEventListener('transitionend',(e)=> e.target.style.opacity = 1);

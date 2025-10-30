@@ -1,18 +1,15 @@
 <script src="{{ 'product.js' | asset_url }}" defer></script>
 
 <div class="flex gap-25 justify-center">
-  <div class="flex flex-col items-start gap-3 w-[459px]">
-      <div>
-          <img height="" width="" class="w-[459px] h-[447px] rounded-lg object-cover" src="{{ product.featured_image | image_url: width: 1000   }}" alt="">
+  <div id="product-images" class="flex flex-col items-start gap-3 w-[459px]">
+      <div class="">
+          <img height="" width="" class="large-product-image w-[459px] h-[447px] rounded-lg object-cover transition-opacity ease-in-out duration-350" src="{{ product.featured_image | image_url: width: 1000   }}" alt="">
       </div>
       <div class="flex gap-3">
         {%- for thisProductMedia in product.media -%}
-          {%- unless thisProductMedia == product.featured_image -%}
-            <div class="cursor-pointer">
-              <img height="" width="" class="w-[144px] h-[124px] rounded-lg object-cover" src="{{ thisProductMedia | image_url }}" alt="">
-            </div>  
-          {%- endunless -%}
-          
+          <div class="">
+            <img height="" width="" class="mini-product-image cursor-pointer w-[144px] h-[124px] rounded-lg object-cover" src="{{ thisProductMedia | image_url }}" alt="">
+          </div>  
         {%- endfor -%}
       </div>
   </div>

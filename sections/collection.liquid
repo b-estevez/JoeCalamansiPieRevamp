@@ -138,20 +138,22 @@
     <div class="collection-products grid grid-cols-2 md:grid-cols-4 text-black gap-10">
     {% paginate collection.products by 20 %}
       {% for product in collection.products %}
-        <div class="collection-product w-[100%]">
+        <div class="collection-product w-[100%] flex flex-col justify-between">
           <div>
-            {% render 'image', 
-            image: product.featured_image,
-            width: 500,
-            height: 500,
-            url: product.url,
-            crop: 'center',
-            class: 'rounded-lg'
-            %}
-          </div>
-          <div class="collection-product__content pt-[10px] text-center pb-[16px]">
-            <p class="font-medium font-poppins text-[12px] lg:text-[14px] pb-[4px]">{{ product.title | escape | link_to: product.url }}</p>
-            <p class="font-montserrat text-[12px] lg:text-[14px] text-product-price">{{ product.price | money }}</p>
+            <div>
+              {% render 'image', 
+              image: product.featured_image,
+              width: 500,
+              height: 500,
+              url: product.url,
+              crop: 'center',
+              class: 'rounded-lg'
+              %}
+            </div>
+            <div class="collection-product__content pt-[10px] text-center pb-[16px]">
+              <p class="font-medium font-poppins text-[12px] lg:text-[14px] pb-[4px]">{{ product.title | escape | link_to: product.url }}</p>
+              <p class="font-montserrat text-[12px] lg:text-[14px] text-product-price">{{ product.price | money }}</p>
+            </div>
           </div>
           <collection-product data-header-target=".cart-count" class="flex flex-col">
             <form class="collection-add-cart">

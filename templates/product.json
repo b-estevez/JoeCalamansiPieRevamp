@@ -14,6 +14,10 @@
       "type": "product",
       "settings": {}
     },
+    "upsell": {
+      "type": "upsell",
+      "settings": {}
+    },
     "newsletter": {
       "type": "index-newsletter",
       "settings": {}
@@ -21,6 +25,7 @@
   },
   "order": [
     "main",
+    "upsell",
     "newsletter"
   ]
 }

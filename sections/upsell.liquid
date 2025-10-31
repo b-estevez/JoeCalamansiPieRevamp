@@ -1,0 +1,51 @@
+<script src="{{ 'collection-products.js' | asset_url }}" defer></script>
+<script src="{{ 'upsell-products.js' | asset_url }}" defer></script>
+
+<div class="upsell-section w-[80%] mx-auto pt-30 pb-[160px] text-black">
+  <div class="upsell-headings pb-[40px]">
+    <p class="text-[14px] lg:text-[16px] font-montserrat">Our recommended pairings</p>
+    <h2 class="font-poppins font-bold text-hero-brown text-[24px] lg:text-[32px] pb-[4px]">You may also like</h2>
+  </div>
+  <upsell-products 
+    data-page-type='product'
+    class="upsell-products grid grid-cols-2 md:grid-cols-4 gap-10"
+  >
+    {% for product in collections['featured-products'].products %}
+      <div 
+        data-product-handle="{{ product.handle }}"
+        class="collection-product w-[100%]"
+      >
+          <div>
+            {% render 'image', 
+            image: product.featured_image,
+            width: 260,
+            height: 300,
+            url: product.url,
+            crop: 'center',
+            class: 'rounded-lg'
+            %}
+          </div>
+          <div class="collection-product__content pt-[10px] text-center pb-[16px]">
+            <p class="font-medium font-poppins pb-[4px]">{{ product.title | escape | link_to: product.url }}</p>
+            <p class="font-montserrat text-[14px] text-product-price">{{ product.price | money }}</p>
+          </div>
+          <collection-product data-header-target=".cart-count">
+            <form class="collection-add-cart">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              {% if product.available %}
+                <button type="submit" class="flex flex-row items-center justify-center gap-1 lg:gap-3 bg-hero-yellow2 w-full rounded-full px-[24px] py-[16px] lg:py-[12px] font-medium text-[10px] lg:text-[16px] cursor-pointer">
+                  {% render 'icon-cart' %}
+                  Add to Cart
+                </button>
+              {% else %}
+                <button type="submit" class="flex flex-row items-center justify-center gap-1 lg:gap-3 bg-black/10 w-full rounded-full px-[24px] py-[16px] lg:py-[12px] font-medium text-[10px] lg:text-[16px]" disabled>
+                  Out of Stock
+                </button>
+              {% endif %}
+              
+            </form>   
+          </collection-product>
+        </div>
+  {% endfor %}
+  </upsell-products>
+</div>

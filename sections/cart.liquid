@@ -7,10 +7,10 @@
 
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 
-<div class="cart w-[80%] mx-auto pt-[30vh] pb-[160px] text-black">
+<div class="cart w-[80%] mx-auto pt-[20vh] md:pt-[30vh] pb-[160px] text-black">
   <div class="cart-heading pb-[80px]">
-    <h1 class="font-poppins font-bold text-hero-brown text-[32px] pb-[4px]">Your Cart</h1>
-    <p class="text-[20px] text-montserrat">Your delicious picks are waiting. Check your order before you proceed.</p>
+    <h1 class="font-poppins font-bold text-hero-brown text-[24px] md:text-[32px] pb-[4px]">Your Cart</h1>
+    <p class="text-16px] md:text-[20px] text-montserrat">Your delicious picks are waiting. Check your order before you proceed.</p>
   </div>
 
   <div class="cart-main">
@@ -18,7 +18,7 @@
     <ul class="list bg-white">
       <li class="list-row rounded-none grid-cols-3 font-montserrat text-cart-th text-[14px] p-0 pb-[16px] border-b-[1px] border-b-black/10">
         <div>PRODUCT</div>
-        <div>QUANTITY</div>
+        <div class="hidden md:block">QUANTITY</div>
         <div class="justify-self-end">TOTAL</div>
       </li>
       <li>
@@ -33,18 +33,18 @@
     </ul>
     {% else %}
     <ul class="list bg-white">
-      <li class="list-row rounded-none grid-cols-3 font-montserrat text-cart-th text-[14px] p-0 pb-[16px] border-b-[1px] border-b-black/10">
-        <div>PRODUCT</div>
-        <div>QUANTITY</div>
-        <div class="justify-self-end">TOTAL</div>
+      <li class="list-row rounded-none grid-cols-8 md:grid-cols-3 font-montserrat text-cart-th text-[14px] p-0 pb-[16px] border-b-[1px] border-b-black/10">
+        <div class="col-span-2 md:col-span-1 text-[12px] md:text-[14px]">PRODUCT</div>
+        <div class="col-span-3 md:col-span-1 text-[12px] md:text-[14px]">QUANTITY</div>
+        <div class="col-span-3 md:col-span-1 justify-self-end text-[12px] md:text-[14px]">TOTAL</div>
       </li>      
       {% for item in cart.items %}
       <cart-item 
         data-section-id={{ section.id }} 
         data-item-key={{ item.key }}
         data-header-target=".cart-count"
-        class="list-row grid-cols-3 px-0 py-[10px] border-b-[1px] border-b-black/10 text-nav-black">
-        <div class="flex flex-row gap-5">
+        class="list-row grid-cols-8 md:grid-cols-3 px-0 py-[10px] border-b-[1px] border-b-black/10 text-nav-black">
+        <div class="col-span-2 md:col-span-1 flex flex-row gap-5">
           <div class="w-[100px] h-[100px] rounded-lg">
             {% render 'image',
             image: item.image,
@@ -54,29 +54,36 @@
             class: 'rounded-lg'
             %}
             </div>
-          <div class="flex flex-col justify-center gap-[4px]">
+          <div class="hidden md:flex flex-col justify-center gap-[4px]">
             <p>{{ item.variant.title }}</p>
             <p class="font-medium text-[16px]">{{ item.title }}</p>
             <p>{{ item.variant.price | money}}</p>
           </div>
         </div>
-        <div class="flex flex-row gap-5 items-center">
-          <div class="flex flex-row items-center">
-            <button data-type="decrement" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-l-1 rounded-l-sm border-black/20 cursor-pointer">–</button>
-            <input 
-              class="w-[40px] h-[40px] text-center border-y-1 border-black/20"
-              type="text" 
-              value="{{ item.quantity }}"
-            >
-            <button data-type="increment" class="quantity w-[40px] h-[40px] text-[24px] border-y-1 border-r-1 rounded-r-sm border-black/20 cursor-pointer">+</button>
+        <div class="col-span-3 md:col-span-1 flex flex-col md:flex-row gap-5 items-center">
+          <div class="flex md:hidden flex-col justify-center gap-[4px]">
+            <p class="text-[12px] md:text-[14px]">{{ item.variant.title }}</p>
+            <p class="font-medium text-[14px] md:text-[16px]">{{ item.title }}</p>
+            <p class="text-[12px] md:text-[14px]">{{ item.variant.price | money}}</p>
           </div>
-          <div>
-            <button data-type="remove-item" data-line="{{ item }}"class="quantity cursor-pointer">
-              {% render 'icon-trash' %}
-            </button>
+          <div class="flex flex-row gap-5 items-center">
+            <div class="flex flex-row items-center">
+              <button data-type="decrement" class="quantity w-[30px] h-[30px] md:w-[40px] md:h-[40px] text-[20px] md:text-[24px] border-y-1 border-l-1 rounded-l-sm border-black/20 cursor-pointer">–</button>
+              <input 
+                class="w-[30px] h-[30px] md:w-[40px] md:h-[40px] text-center border-y-1 border-black/20"
+                type="text" 
+                value="{{ item.quantity }}"
+              >
+              <button data-type="increment" class="quantity w-[30px] h-[30px] md:w-[40px] md:h-[40px] text-[20px] md:text-[24px] border-y-1 border-r-1 rounded-r-sm border-black/20 cursor-pointer">+</button>
+            </div>
+            <div>
+              <button data-type="remove-item" data-line="{{ item }}"class="quantity cursor-pointer">
+                {% render 'icon-trash' %}
+              </button>
+            </div>
           </div>
         </div>
-        <div class="flex flex-row justify-end items-center">
+        <div class="col-span-3 md:col-span-1 flex flex-row justify-end items-center">
           <span class="line-price">{{ item.original_line_price | money }}</span>
         </div>
       </cart-item>
@@ -85,10 +92,10 @@
 
     <div class="flex flex-row justify-end pt-[50px] ">
       <div class="text-right">
-        <p class="cart-subtotal font-medium text-[20px] text-nav-black">Subtotal: {{ cart.items_subtotal_price | money }}</p>
-        <p class="text-[14px] text-cart-th pt-[4px] pb-[24px]">Taxes, discounts and shipping calculated at checkout.</p>
+        <p class="cart-subtotal font-medium md:text-[16px] md:text-[20px] text-nav-black">Subtotal: {{ cart.items_subtotal_price | money }}</p>
+        <p class="text-[10px] md:text-[14px] text-cart-th pt-[4px] pb-[24px]">Taxes, discounts and shipping calculated at checkout.</p>
         <form action="/checkout" method="post">
-          <button class="w-[45vh] pl-[24px] pr-[20px] py-[12px] rounded-full bg-hero-yellow2 font-medium text-[16px] cursor-pointer">Checkout</button>
+          <button class="w-[45vh] pl-[24px] pr-[20px] py-[12px] rounded-full bg-hero-yellow2 font-medium text-[14px] md:text-[16px] cursor-pointer">Checkout</button>
         </form>
       </div>
     </div>

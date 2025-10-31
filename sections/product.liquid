@@ -1,32 +1,32 @@
 <script src="{{ 'product.js' | asset_url }}" defer></script>
 
-<div class="flex gap-25 justify-center">
-  <div id="product-images" class="flex flex-col items-start gap-3 w-[459px]">
+<div class="flex flex-col md:flex-row gap-15 md:gap-10 lg:gap-25 justify-center">
+  <div id="product-images" class="flex flex-col lg:items-start gap-3 w-full lg:w-[459px]">
       <div class="">
-          <img height="" width="" class="large-product-image w-[459px] h-[447px] rounded-lg object-cover transition-opacity ease-in-out duration-350" src="{{ product.featured_image | image_url: width: 1000   }}" alt="">
+          <img height="" width="" class="large-product-image md:w-full lg:w-[459px] lg:h-[447px] rounded-lg object-cover transition-opacity ease-in-out duration-350" src="{{ product.featured_image | image_url: width: 1000   }}" alt="">
       </div>
       <div class="flex gap-3">
         {%- for thisProductMedia in product.media -%}
           <div class="">
-            <img height="" width="" class="mini-product-image cursor-pointer w-[144px] h-[124px] rounded-lg object-cover" src="{{ thisProductMedia | image_url }}" alt="">
+            <img height="" width="" class="mini-product-image cursor-pointer w-[80px] h-[80px] sm:w-[144px] sm:h-[124px] rounded-lg object-cover" src="{{ thisProductMedia | image_url }}" alt="">
           </div>  
         {%- endfor -%}
       </div>
   </div>
   
-  <div class="flex flex-col gap-6 w-[40%]">
+  <div class="flex flex-col gap-6 w-full lg:w-[40%]">
     <div class="flex flex-col gap-2">
-      <p class="text-sm">Freshly Baked Calamansi Pie</p>
-      <h1 class="text-4xl font-semibold font-poppins">{{product.title}}</h1>
-      <p class="text-2xl font-medium"> {{product.price | money_with_currency}}</p>
+      <p class="text-xs lg:text-sm">Freshly Baked Calamansi Pie</p>
+      <h1 class="text-2xl lg:text-4xl font-semibold font-poppins">{{product.title}}</h1>
+      <p class="text-lg lg:text-2xl font-medium"> {{product.price | money_with_currency}}</p>
     </div>
 
     <div class="flex flex-col gap-5">
-      <div class="text-lg">
+      <div class="text-sm lg:text-lg">
         {{ product.content }}
       </div>
       
-      <p class="text-lg">
+      <p class="text-sm lg:text-lg">
         {% for option in product.options -%}
              {{ option }}
           {%- endfor %}
@@ -40,7 +40,7 @@
     <product-item 
       data-section-id={{ section.id }}
       data-header-target=".cart-count"
-      class="flex flex-col gap-10">
+      class="flex flex-col gap-10 text-sm lg:text-lg">
       <div class="flex gap-10">
         <div>
           <label>Quantity</label>
@@ -71,12 +71,12 @@
       <form class="product-add-cart">
         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
         {% if product.available %}
-          <button id="product-add-to-cart-btn" type="submit" class="flex flex-row items-center justify-center gap-3 bg-hero-yellow2 w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px] cursor-pointer">
+          <button id="product-add-to-cart-btn" type="submit" class="flex flex-row items-center justify-center gap-3 bg-hero-yellow2 md:w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px] cursor-pointer">
             {% render 'icon-cart' %}
             Add to Cart
           </button>
         {% else %}
-          <button type="submit" class="flex flex-row items-center justify-center gap-3 bg-black/10 w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px]" disabled>
+          <button type="submit" class="flex flex-row items-center justify-center gap-3 bg-black/10 md:w-[60%] rounded-full px-[24px] py-[12px] font-medium text-[16px]" disabled>
             Out of Stock
           </button>
         {% endif %}
@@ -91,6 +91,6 @@
 {
   "name": "product",
   "settings": [],
-  "class": "mt-20 lg:px-40 pt-40 mx-10 text-green-950",
+  "class": "mt-20 xl:px-40 pt-40 mx-10 text-green-950",
 }
 {% endschema %}

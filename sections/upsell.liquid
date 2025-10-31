@@ -13,9 +13,10 @@
     {% for product in collections['featured-products'].products %}
       <div 
         data-product-handle="{{ product.handle }}"
-        class="collection-product w-[100%]"
+        class="collection-product w-[100%] flex flex-col justify-between"
       >
-          <div>
+        <div>
+            <div>
             {% render 'image', 
             image: product.featured_image,
             width: 260,
@@ -25,10 +26,13 @@
             class: 'rounded-lg'
             %}
           </div>
+
           <div class="collection-product__content pt-[10px] text-center pb-[16px]">
             <p class="font-medium font-poppins pb-[4px]">{{ product.title | escape | link_to: product.url }}</p>
             <p class="font-montserrat text-[14px] text-product-price">{{ product.price | money }}</p>
           </div>
+        </div>
+          
           <collection-product data-header-target=".cart-count">
             <form class="collection-add-cart">
               <input type="hidden" name="id" value="{{ product.variants.first.id }}">

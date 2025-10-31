@@ -17,7 +17,7 @@
                 <div class="flex flex-col items-center lg:items-start gap-5 lg:gap-10">
                     <div class="hero-buttons flex gap-5">
                         <button data-scroll-to="section[id*=__newsletter]" class="scroll-button btn btn-outline sm:px-10 rounded-tl-xl rounded-br-xl hover:hover:bg-white hover:text-black">Our Story</button>
-                        <button data-scroll-to="section[id*=__newsletter]" class="scroll-button btn bg-yellow-300 text-black rounded-tl-xl rounded-br-xl hover:bg-yellow-400"> {% render 'icon-shopping-cart' %} Shop Now</button>
+                        <a href="{{ routes.all_products_collection_url }}" class="scroll-button btn bg-yellow-300 text-black rounded-tl-xl rounded-br-xl hover:bg-yellow-400"> {% render 'icon-shopping-cart' %} Shop Now</a>
                     </div>
                     <div class="text-xs xl:text-lg flex gap-3 sm:gap-10 font-medium text-yellow-300">
                         <p class="flex sm:gap-1 items-center"> {% render 'icon-hero-check' %} 100% Real butter</p>

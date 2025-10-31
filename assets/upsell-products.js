@@ -28,9 +28,7 @@ class UpsellProducts extends HTMLElement {
   makeProductInvisible(productsToExclude) {
     this.upsellProducts.forEach((upsellProduct) => {
       const upsellHandle = upsellProduct.dataset.productHandle
-      console.log(productsToExclude, upsellHandle, productsToExclude.includes(upsellHandle))
       if (productsToExclude.includes(upsellHandle)){
-        console.log(upsellHandle, productsToExclude)
        upsellProduct.style.display = 'none'
       }
     })

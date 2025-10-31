@@ -25,7 +25,6 @@ class CartItem extends HTMLElement {
       button.addEventListener('click', this.handleClick) 
     })
     this.input.addEventListener('input', this.debouncedHandleChange)
-    console.log(this)
   }
 
   handleClick(e) {

@@ -4,20 +4,20 @@
   <div class="drawer-content flex justify-evenly items-center lg:items-center gap-1 lg:justify-around py-2">
     <div class="hidden lg:flex lg:gap-2 text-white">
       <div class="flex flex-col">
-        <span class="font-bold"> Joe's Calamansi Confection Inc.</span>
+        <span class="font-bold"> Joe's Calamansi Confections Inc.</span>
         <span> (+63) 928 312 6872</span>
       </div>
     </div>
     <div class="flex ml-3 lg:hidden items-center ml-2">
       <a href="#" >
-        <label for="my-drawer" class="drawer-button text-white">
+        <label for="my-drawer" class="drawer-button text-black">
           {% render 'icon-hamburger-menu' %}
         </label>
       </a>
     </div>
 
     <nav class="min-h-max top-[0] h-full lg:h-auto lg:mt-auto">
-      <a id="jcc_logo" href="/" class="hidden invisible transition duration-200 ease-in-out lg:block lg:absolute lg:top-2 lg:left-[50%] lg:translate-x-[-50%]">
+      <a id="jcc_logo" href="{{ routes.root_url }}" class="hidden invisible transition duration-200 ease-in-out lg:block lg:absolute lg:top-2 lg:left-[50%] lg:translate-x-[-50%]">
         <img src="{{section.settings.header_logo | image_url }}" height="auto" width="150" alt="JCC logo" class="lg:w-50.5">
       </a>
       <ul class="hidden lg:flex flex-col lg:flex-row gap-6 text-[14px] ml-[-60px] mt-21">
@@ -35,13 +35,7 @@
 
         {% for link in linklists.main-menu.links %}
           <li class="lg:rounded-sm text-white">
-              {%- if link.title == "Shop" -%}
-                
-                <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>
-                {%- else -%}
-                  <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="/">{{ link.title }}</a>
-                  
-              {%- endif -%}
+            <a class="hover:bg-white/10 px-3.5 block py-2 lg:py-2 rounded-sm" href="{{ link.url }}">{{ link.title }}</a>      
           </li>
         {% endfor %}
       
